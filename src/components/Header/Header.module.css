@@ -1,0 +1,28 @@
+.header {
+  background-color: var(--color-bg-dark);
+  padding-block: 35px 36px;
+}
+
+.header > div {
+  display: grid;
+
+  grid-template-columns: 1fr auto 1fr;
+}
+
+.cart {
+  cursor: pointer;
+  border: transparent;
+  background: transparent;
+  justify-self: end;
+  /* optical alignment */
+  margin-block-start: -10px;
+}
+
+.cart path {
+  transition: color var(--out-animation);
+}
+
+.cart:hover path {
+  fill: var(--color-accent);
+  transition: fill var(--enter-animation);
+}
