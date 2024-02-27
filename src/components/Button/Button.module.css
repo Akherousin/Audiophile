@@ -1,0 +1,56 @@
+.button {
+  display: inline-block;
+  padding: 14px;
+  min-inline-size: 10rem;
+  text-align: center;
+  font-size: var(--font-size-subtitle);
+  line-height: 1.125rem;
+  letter-spacing: 0.08em;
+  transition: all var(--out-animation);
+  border: 1px solid;
+}
+
+a.button {
+  text-decoration: none;
+}
+
+.button:hover,
+.button:active {
+  transition: all var(--enter-animation);
+}
+
+.button[data-variant='colored'] {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-white);
+}
+
+.button[data-variant='colored']:hover,
+.button[data-variant='colored']:active {
+  background-color: var(--color-accent-light);
+  border-color: var(--color-accent-light);
+}
+
+.button[data-variant='black'] {
+  background-color: var(--color-black);
+  border-color: var(--color-black);
+  color: var(--color-white);
+}
+
+.button[data-variant='black']:hover,
+.button[data-variant='black']:active {
+  background-color: hsl(0, 0%, 30%);
+  border-color: hsl(0, 0%, 30%);
+}
+
+.button[data-variant='colorless'] {
+  background-color: transparent;
+  border-color: var(--color-black);
+  color: var(--color-black);
+}
+
+.button[data-variant='colorless']:hover,
+.button[data-variant='colorless']:active {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
