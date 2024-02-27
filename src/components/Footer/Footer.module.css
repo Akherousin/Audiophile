@@ -1,0 +1,45 @@
+.footer {
+  background-color: var(--color-bg-dark);
+  color: var(--color-white);
+  padding-block: 75px 48px;
+}
+
+.footer ul {
+  list-style: none;
+  justify-self: end;
+}
+
+.footer a {
+  color: inherit;
+}
+
+.footer p {
+  opacity: 0.5;
+}
+
+.footer p:first-of-type {
+  margin-block-start: 2.25rem;
+}
+
+.footer p:last-of-type {
+  margin-block-start: 3.5rem;
+
+  font-weight: var(--font-weight-bold);
+}
+
+.socials {
+  align-self: end;
+  display: flex;
+  gap: 1rem;
+  /* optical alignment */
+  margin-block-end: 5px;
+}
+
+.socials a path {
+  transition: fill var(--out-animation);
+}
+
+.socials a:hover path {
+  fill: var(--color-accent);
+  transition: fill var(--enter-animation);
+}
