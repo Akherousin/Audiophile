@@ -1,107 +1,275 @@
-:root {
-  --max-width: 1100px;
-  --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
-    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
-    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+/* ......................................................................................... */
+/* CSS reset */
+/* ......................................................................................... */
 
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-
-  --primary-glow: conic-gradient(
-    from 180deg at 50% 50%,
-    #16abff33 0deg,
-    #0885ff33 55deg,
-    #54d6ff33 120deg,
-    #0071ff33 160deg,
-    transparent 360deg
-  );
-  --secondary-glow: radial-gradient(
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 0)
-  );
-
-  --tile-start-rgb: 239, 245, 249;
-  --tile-end-rgb: 228, 232, 233;
-  --tile-border: conic-gradient(
-    #00000080,
-    #00000040,
-    #00000030,
-    #00000020,
-    #00000010,
-    #00000010,
-    #00000080
-  );
-
-  --callout-rgb: 238, 240, 241;
-  --callout-border-rgb: 172, 175, 176;
-  --card-rgb: 180, 185, 188;
-  --card-border-rgb: 131, 134, 135;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-
-    --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
-    --secondary-glow: linear-gradient(
-      to bottom right,
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0.3)
-    );
-
-    --tile-start-rgb: 2, 13, 46;
-    --tile-end-rgb: 2, 5, 19;
-    --tile-border: conic-gradient(
-      #ffffff80,
-      #ffffff40,
-      #ffffff30,
-      #ffffff20,
-      #ffffff10,
-      #ffffff10,
-      #ffffff80
-    );
-
-    --callout-rgb: 20, 20, 20;
-    --callout-border-rgb: 108, 108, 108;
-    --card-rgb: 100, 100, 100;
-    --card-border-rgb: 200, 200, 200;
-  }
-}
-
-* {
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
   box-sizing: border-box;
-  padding: 0;
+}
+/*
+  2. Remove default margin
+*/
+* {
   margin: 0;
+  padding: 0;
 }
-
-html,
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
 body {
-  max-width: 100vw;
-  overflow-x: hidden;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  5. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* Variables */
+
+:root {
+  --max-inline-size: 69.375rem;
+
+  --color-accent: hsl(22deg 65% 57%);
+  --color-accent-light: hsl(21deg 94% 75%);
+  --color-white: hsl(0deg 0% 100%);
+  --color-black: hsl(0deg 0% 0%);
+  --color-bg-dark: hsl(0deg 0% 6%);
+  --color-bg-grey: hsl(0deg 0% 95%);
+  --color-bg-light: hsl(0deg 0% 98%);
+
+  --font-size-h1: 3.5rem;
+  --font-size-h2: 2.5rem;
+  --font-size-h3: 2rem;
+  --font-size-h4: 1.75rem;
+  --font-size-h5: 1.5rem;
+  --font-size-h6: 1.12rem;
+  --font-size-body: 0.9375rem;
+  --font-size-overline: 0.875rem;
+  --font-size-subtitle: 0.8125rem;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  --enter-animation: 100ms ease-in;
+  --out-animation: 350ms ease-out;
+
+  --box-radius: 8px;
+}
+
+/* General */
+
+h1,
+.h1 {
+  font-size: var(--font-size-h1);
+  line-height: 3.625rem;
+}
+
+h2,
+.h2 {
+  font-size: var(--font-size-h2);
+  line-height: 2.75rem;
+}
+
+h3,
+.h3 {
+  font-size: var(--font-size-h3);
+  line-height: 2.25rem;
+}
+
+h4,
+.h4 {
+  font-size: var(--font-size-h4);
+  line-height: 2.375rem;
+}
+
+h5,
+.h5 {
+  font-size: var(--font-size-h5);
+  line-height: 2.0625rem;
+}
+
+h6,
+.h6 {
+  font-size: var(--font-size-h6);
+  line-height: 1.5rem;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3 {
+  letter-spacing: 0.04em;
+}
+
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  letter-spacing: 0.07em;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  text-transform: uppercase;
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  color: var(--color-black);
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-weight: var(--font-size-body);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.5625rem;
+  color: var(--color-black);
 }
 
-a {
-  color: inherit;
+body::after {
+  content: '';
+  /* background-image: url('/bg.png'); */
+  top: 0;
+  width: 100%;
+  height: 3950px;
+  position: absolute;
+  z-index: 10;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.navlinks {
+  display: flex;
+  list-style: none;
+  gap: 34px;
+}
+
+.navlink:link,
+.navlink:visited {
+  display: block;
+  color: var(--color-white);
   text-decoration: none;
+  letter-spacing: 0.15em;
+  transition: color var(--out-animation);
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+.navlink:hover,
+.navlink:active {
+  color: var(--color-accent);
+  transition: color var(--enter-animation);
+}
+
+/* Utilities */
+
+.visually-hidden:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.click-target-helper {
+  position: relative;
+}
+
+.click-target-helper::after {
+  --click-target-minimum: 44px;
+  --inset-by: min(0px, calc((100% - var(--click-target-minimum)) / 2));
+
+  content: '';
+  position: absolute;
+  top: var(--inset-by);
+  left: var(--inset-by);
+  right: var(--inset-by);
+  bottom: var(--inset-by);
+}
+
+.overline {
+  color: var(--color-accent);
+  font-size: var(--font-size-overline);
+  font-weight: var(--font-weight-regular);
+  letter-spacing: 0.71em;
+  line-height: 1.1875rem;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  color: var(--color-accent);
+  font-size: var(--font-size-subtitle);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.07em;
+  line-height: 1.5625rem;
+  text-transform: uppercase;
+}
+
+.wrapper {
+  box-sizing: content-box;
+  max-inline-size: var(--max-inline-size);
+  margin-inline: auto;
+  padding-inline: 39px 40px;
+}
+
+.image-wrapper > img {
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.box {
+  border-radius: var(--box-radius);
+}
+
+.two-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 30px;
 }

@@ -1,95 +1,106 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import styles from './page.module.css';
+import paths from '@/paths';
+
+import Button from '@/components/Button';
+import Image from 'next/image';
+
+import heroImg from '@/assets/home/desktop/image-hero.png';
+import patternImg from '@/assets/home/desktop/pattern-circles.svg';
+import speakerZX9Img from '@/assets/home/desktop/image-speaker-zx9.png';
+import speakerZX7Img from '@/assets/home/desktop/image-speaker-zx7.jpg';
+import earphonesYX1Img from '@/assets/home/desktop/image-earphones-yx1.jpg';
+
+import Header from '@/components/Header';
+import Links from '@/components/Links';
+import AboutUs from '@/components/AboutUs';
+import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    <>
+      <Header />
+      <main>
+        <section className={styles.hero}>
+          <div className="wrapper">
+            <div className={styles.image}>
+              <Image src={heroImg} alt="" />
+            </div>
+            <div className={styles.info}>
+              <p className="overline">New product</p>
+              <h1>XX99 Mark II Headphones</h1>
+              <p>
+                Experience natural, lifelike audio and exceptional build quality
+                made for the passionate music enthusiast.
+              </p>
+              <Button as="link" href={paths.home()} variant="colored">
+                See product
+              </Button>
+            </div>
+          </div>
+        </section>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+        <section className={styles.links}>
+          <div className="wrapper">
+            <Links />
+          </div>
+        </section>
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+        <section>
+          <div className="wrapper">
+            <article className={`${styles.product1} | box`}>
+              <div className={`${styles.product1__pattern} | image-wrapper`}>
+                <Image src={patternImg} alt="" />
+              </div>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
+              <div className={`${styles.product1__image} | image-wrapper`}>
+                <Image src={speakerZX9Img} alt="" />
+              </div>
+              <div className={styles.product1__info}>
+                <h2 className="h1">ZX9 SPEAKER</h2>
+                <p>
+                  Upgrade to premium speakers that are phenomenally built to
+                  deliver truly remarkable sound.
+                </p>
+                <Button as="link" variant="black" href={paths.home()}>
+                  See product
+                </Button>
+              </div>
+            </article>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
+            <article className={`${styles.product2} | box`}>
+              <div className={`${styles.product2__image} | image-wrapper`}>
+                <Image src={speakerZX7Img} alt="" />
+              </div>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+              <div>
+                <h2 className="h4">ZX7 SPEAKER</h2>
+                <Button as={'link'} variant="colorless" href={paths.home()}>
+                  See product
+                </Button>
+              </div>
+            </article>
+
+            <article className={`${styles.product3} | two-columns`}>
+              <div className={`${styles.product3__image} | image-wrapper box`}>
+                <Image src={earphonesYX1Img} alt="" />
+              </div>
+              <div className="box">
+                <h2 className="h4">YX1 EARPHONES</h2>
+                <Button as={'link'} variant="colorless" href={paths.home()}>
+                  See product
+                </Button>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section className={styles.about}>
+          <div className="wrapper">
+            <AboutUs />
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </>
   );
 }
