@@ -1,0 +1,79 @@
+.list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.item {
+  position: relative;
+  isolation: isolate;
+  background-color: var(--color-bg-grey);
+  padding-block: 116px 30px;
+  text-align: center;
+}
+
+.item h2 {
+  line-height: 1.5625rem;
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  inline-size: 220px;
+}
+
+.image[data-image='headphones'] {
+  transform: translate(-50%, -38%);
+}
+
+.image[data-image='speakers'] {
+  transform: translate(-50%, -36%);
+}
+
+.image[data-image='earphones'] {
+  transform: translate(-50%, -31%);
+}
+
+.link:link,
+.link:visited {
+  margin-block-start: 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13.32px;
+
+  color: var(--color-black);
+  letter-spacing: 0.08em;
+  line-height: 1.125rem;
+
+  text-decoration: none;
+  transition: color var(--out-animation);
+}
+
+.link:link > span,
+.link:visited > span {
+  opacity: 0.5;
+  transition: opacity var(--out-animation);
+}
+
+.link:hover,
+.link:active {
+  color: var(--color-accent);
+  transition: color var(--enter-animation);
+}
+
+.link:hover > span,
+.link:active > span {
+  opacity: 1;
+  transition: opacity var(--enter-animation);
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
