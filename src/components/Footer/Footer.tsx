@@ -60,10 +60,12 @@ function Footer() {
           <span hidden id="social-links-label">
             Social links
           </span>
-          <a href="https://www.facebook.com/" className="click-target-helper">
-            <span className="visually-hidden">Facebook</span>
-            <FacebookSvg />
-          </a>
+          <li>
+            <a href="https://www.facebook.com/" className="click-target-helper">
+              <span className="visually-hidden">Facebook</span>
+              <FacebookSvg />
+            </a>
+          </li>
           <li>
             <a href="https://www.twitter.com/" className="click-target-helper">
               <span className="visually-hidden">Twitter</span>
