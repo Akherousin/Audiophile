@@ -1,6 +1,5 @@
 .hero {
   background-color: var(--color-bg-dark);
-
   color: var(--color-white);
 }
 
@@ -8,7 +7,6 @@
   padding-block: 128px 158px;
   border-block-start: 1px solid hsla(0, 0%, 100%, 0.2);
   position: relative;
-  overflow: hidden;
 }
 
 .info {
@@ -50,13 +48,6 @@
 
 .links {
   padding-block: 200px 168px;
-}
-
-.product1,
-.product2,
-.product3__image {
-  /* overflow hides the overflowing images */
-  overflow: hidden;
 }
 
 .product1,

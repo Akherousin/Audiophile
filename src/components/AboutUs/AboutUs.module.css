@@ -1,22 +1,4 @@
-.article {
-  align-items: center;
-}
-
-.info {
-  max-inline-size: 29.375rem;
-}
-
-.info em {
+.colored {
   font-style: inherit;
   color: var(--color-accent);
-}
-
-.info p {
-  margin-block-start: 2rem;
-  opacity: 0.5;
-}
-
-.image {
-  /* hides the overflowing images */
-  overflow: hidden;
 }

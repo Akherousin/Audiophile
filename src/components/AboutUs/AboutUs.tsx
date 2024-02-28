@@ -5,12 +5,13 @@ import bestGearImg from '@/assets/shared/desktop/image-best-gear.jpg';
 
 function AboutUs() {
   return (
-    <article className={`${styles.article} | two-columns`}>
-      <div className={styles.info}>
+    <article className="two-columns" data-reversed-columns="true">
+      <div className="info">
         <h2>
-          Bringing you the <em>best</em> audio gear
+          Bringing you the <em className={`${styles.colored}`}>best</em> audio
+          gear
         </h2>
-        <p>
+        <p className="description">
           Located at the heart of New York City, Audiophile is the premier store
           for high end headphones, earphones, speakers, and audio accessories.
           We have a large showroom and luxury demonstration rooms available for
@@ -19,7 +20,7 @@ function AboutUs() {
           best place to buy your portable audio equipment.
         </p>
       </div>
-      <div className={`${styles.image}  | image-wrapper box`}>
+      <div className={`image-wrapper box overflow-hidden`}>
         <Image src={bestGearImg} alt="" />
       </div>
     </article>

@@ -18,10 +18,10 @@ import Footer from '@/components/Footer';
 export default function Home() {
   return (
     <>
-      <Header />
+      <Header variant="dark" />
       <main>
         <section className={styles.hero}>
-          <div className="wrapper">
+          <div className="wrapper overflow-hidden">
             <div className={styles.image}>
               <Image src={heroImg} alt="" />
             </div>
@@ -47,7 +47,7 @@ export default function Home() {
 
         <section>
           <div className="wrapper">
-            <article className={`${styles.product1} | box`}>
+            <article className={`${styles.product1} | box overflow-hidden`}>
               <div className={`${styles.product1__pattern} | image-wrapper`}>
                 <Image src={patternImg} alt="" />
               </div>
@@ -56,8 +56,10 @@ export default function Home() {
                 <Image src={speakerZX9Img} alt="" />
               </div>
               <div className={styles.product1__info}>
-                <h2 className="h1">ZX9 SPEAKER</h2>
-                <p>
+                <h2 className="h1" data-selection="dark">
+                  ZX9 SPEAKER
+                </h2>
+                <p data-selection="dark">
                   Upgrade to premium speakers that are phenomenally built to
                   deliver truly remarkable sound.
                 </p>
@@ -67,7 +69,7 @@ export default function Home() {
               </div>
             </article>
 
-            <article className={`${styles.product2} | box`}>
+            <article className={`${styles.product2} | box overflow-hidden`}>
               <div className={`${styles.product2__image} | image-wrapper`}>
                 <Image src={speakerZX7Img} alt="" />
               </div>
@@ -81,7 +83,9 @@ export default function Home() {
             </article>
 
             <article className={`${styles.product3} | two-columns`}>
-              <div className={`${styles.product3__image} | image-wrapper box`}>
+              <div
+                className={`${styles.product3__image} | image-wrapper box overflow-hidden`}
+              >
                 <Image src={earphonesYX1Img} alt="" />
               </div>
               <div className="box">

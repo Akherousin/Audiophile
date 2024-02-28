@@ -174,8 +174,8 @@ body {
 }
 
 body::after {
-  content: '';
-  /* background-image: url('/bg.png'); */
+  /* content: ''; */
+  background-image: url('/bg4.png');
   top: 0;
   width: 100%;
   height: 3950px;
@@ -204,6 +204,14 @@ body::after {
 .navlink:active {
   color: var(--color-accent);
   transition: color var(--enter-animation);
+}
+
+::selection {
+  background-color: var(--color-accent);
+}
+
+[data-selection='dark']::selection {
+  background-color: var(--color-bg-dark);
 }
 
 /* Utilities */
@@ -270,6 +278,27 @@ body::after {
 
 .two-columns {
   display: grid;
+  align-items: center;
   grid-template-columns: 1fr 1fr;
   column-gap: 30px;
+}
+
+.two-columns .info {
+  /* max-inline-size: 29.375rem; */
+  max-inline-size: calc(100% - 95px);
+  justify-self: end;
+}
+
+.two-columns[data-reversed-columns='true'] .info {
+  order: -1;
+  justify-self: normal;
+}
+
+.two-columns .description {
+  margin-block-start: 2rem;
+  opacity: 0.5;
+}
+
+.overflow-hidden {
+  overflow: hidden;
 }
