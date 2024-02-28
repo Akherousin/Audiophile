@@ -1,8 +1,10 @@
 import { promises as fs } from 'fs';
 import { type Product, type Category } from '@/types';
+import path from 'path';
 
 export const fetchAllProducts = async (): Promise<Product[]> => {
-  const data = await fs.readFile(process.cwd() + '/src/db/data.json', 'utf8');
+  const file = path.join(process.cwd() + '/src/db/', 'data.json');
+  const data = await fs.readFile(file, 'utf8');
   const products = JSON.parse(data);
 
   return products;
