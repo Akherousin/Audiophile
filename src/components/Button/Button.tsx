@@ -24,7 +24,14 @@ function Button({
 
   if (as === 'link') {
     return (
-      <Link className={classes} data-variant={variant} {...(rest as LinkProps)}>
+      <Link
+        className={classes}
+        data-variant={variant}
+        {...(variant === 'colored' && {
+          'data-selection': 'dark',
+        })}
+        {...(rest as LinkProps)}
+      >
         {children}
       </Link>
     );
@@ -33,6 +40,9 @@ function Button({
       <button
         className={classes}
         data-variant={variant}
+        {...(variant === 'colored' && {
+          'data-selection-dark': 'dark',
+        })}
         {...(rest as React.ButtonHTMLAttributes<HTMLButtonElement>)}
       >
         {children}

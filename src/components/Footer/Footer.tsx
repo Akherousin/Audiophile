@@ -46,7 +46,7 @@ function Footer() {
             </NavLink>
           </li>
         </ul>
-        <p>
+        <p className="opaque">
           Audiophile is an all in one stop to fulfill your audio needs.
           We&apos;re a small team of music lovers and sound specialists who are
           devoted to helping you get the most out of personal audio. Come and
@@ -80,7 +80,7 @@ function Footer() {
             </a>
           </li>
         </ul>
-        <p>Copyright 2024. All Rights Reserved</p>
+        <p className="opaque">Copyright 2024. All Rights Reserved</p>
       </div>
     </footer>
   );

@@ -20,7 +20,6 @@
 
 .info p:first-of-type {
   color: inherit;
-  opacity: 0.5;
 }
 
 .info h1 {
@@ -39,15 +38,18 @@
   position: absolute;
   bottom: 0;
   pointer-events: none;
+  inline-size: 100%;
+  block-size: 100%;
 }
 
 .image img {
-  object-fit: cover;
-  object-position: bottom 0 right -125px;
+  object-fit: contain;
+  scale: 120%;
+  object-position: top -29px right 33px;
 }
 
 .links {
-  padding-block: 200px 168px;
+  margin-block: 200px 168px;
 }
 
 .product1,
@@ -142,10 +144,16 @@
   inset: 0;
 }
 
+.product3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap);
+}
+
 .product3 > div:last-of-type {
   grid-column: -2 / -1;
 }
 
 .about {
-  padding-block: 200px;
+  margin-block: 200px;
 }

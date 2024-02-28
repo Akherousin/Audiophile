@@ -1,0 +1,61 @@
+.back {
+  margin-block: 4.9375rem 3.5rem;
+}
+
+.features,
+.gallery,
+.others {
+  margin-block-start: var(--breathing-room);
+}
+
+.features h2 {
+  margin-block-end: var(--heading-text-gap);
+}
+
+.list {
+  list-style: none;
+}
+
+.list > * + * {
+  margin-block-start: 0.5rem;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.quantity {
+  color: var(--color-accent);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: 445fr 635fr;
+  gap: var(--gap);
+}
+
+.gallery > div:last-of-type {
+  grid-column: 2 / span 1;
+  grid-row: 1 / span 2;
+}
+
+.others {
+  text-align: center;
+}
+
+.others ul {
+  margin-block-start: 4rem;
+  list-style: none;
+  display: flex;
+  gap: var(--gap);
+}
+
+.other h3 {
+  margin-block-start: 2.5rem;
+}
+
+.other a {
+  margin-block-start: 2rem;
+}

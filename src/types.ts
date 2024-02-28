@@ -25,5 +25,5 @@ export type Product = {
     second: { mobile: string; tablet: string; desktop: string };
     third: { mobile: string; tablet: string; desktop: string };
   };
-  others: Product[];
+  others: Pick<Product, 'slug' | 'name' | 'image'>[];
 };

@@ -13,10 +13,6 @@
   color: inherit;
 }
 
-.footer p {
-  opacity: 0.5;
-}
-
 .footer p:first-of-type {
   margin-block-start: 2.25rem;
 }

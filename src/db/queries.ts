@@ -27,9 +27,7 @@ export const fetchProductsByCategory = async (category: Category) => {
   return filteredProducts;
 };
 
-export const fetchProductBySlug = async (
-  slug: string
-): Promise<Product | null> => {
+export const fetchProductBySlug = async (slug: string) => {
   const products = await fetchAllProducts();
   let product = products.find((product) => product.slug == slug) || null;
 

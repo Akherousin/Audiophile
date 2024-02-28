@@ -1,7 +1,3 @@
-.main {
-  --breathing-room: 160px;
-}
-
 .hero {
   background-color: var(--color-black);
 }
@@ -17,18 +13,10 @@
 }
 
 .products {
-  padding-block-start: var(--breathing-room);
+  margin-block-start: var(--breathing-room);
   list-style: none;
 }
 
 .products > * + * {
-  padding-block-start: var(--breathing-room);
-}
-
-.links {
-  padding-block-start: calc(var(--breathing-room) + 80px);
-}
-
-.about {
-  padding-block: var(--breathing-room);
+  margin-block-start: var(--breathing-room);
 }

@@ -1,0 +1,7 @@
+.links {
+  margin-block-start: calc(var(--breathing-room) + 80px);
+}
+
+.about {
+  margin-block: var(--breathing-room);
+}
