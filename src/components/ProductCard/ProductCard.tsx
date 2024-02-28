@@ -42,7 +42,7 @@ function ProductCard({
           href={paths.showProductPage(slug)}
           className={styles.link}
         >
-          See Product
+          See Product <span className="visually-hidden">name</span>
         </Button>
       </div>
     </article>
