@@ -1,4 +1,4 @@
-type Category = 'headphones' | 'speakers' | 'earphones';
+import { type Category } from './types';
 
 const paths = {
   home() {
@@ -6,7 +6,11 @@ const paths = {
   },
 
   showCategoryPage(category: Category) {
-    return `/${category}`;
+    return `/category/${category}`;
+  },
+
+  showProductPage(slug: string) {
+    return `/product/${slug}`;
   },
 };
 
