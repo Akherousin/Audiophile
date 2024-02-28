@@ -6,9 +6,13 @@ import NavLink from '@/components/NavLink';
 
 import CartSvg from './CartSvg';
 
-function Header() {
+type HeaderProps = {
+  variant: 'dark' | 'black';
+};
+
+function Header({ variant }: HeaderProps) {
   return (
-    <header className={styles.header}>
+    <header className={styles.header} data-variant={variant}>
       <div className="wrapper">
         <Logo />
 

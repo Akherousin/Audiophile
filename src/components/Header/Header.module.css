@@ -1,6 +1,13 @@
 .header {
-  background-color: var(--color-bg-dark);
   padding-block: 35px 36px;
+}
+
+.header[data-variant='dark'] {
+  background-color: var(--color-bg-dark);
+}
+
+.header[data-variant='black'] {
+  background-color: var(--color-black);
 }
 
 .header > div {
