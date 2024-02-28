@@ -23,7 +23,7 @@ function Footer() {
           </li>
           <li>
             <NavLink
-              href={paths.home()}
+              href={paths.showCategoryPage('headphones')}
               className={`navlink subtitle click-target-helper`}
             >
               Headphones
@@ -31,7 +31,7 @@ function Footer() {
           </li>
           <li>
             <NavLink
-              href={paths.home()}
+              href={paths.showCategoryPage('speakers')}
               className={`navlink subtitle click-target-helper`}
             >
               Speakers
@@ -39,7 +39,7 @@ function Footer() {
           </li>
           <li>
             <NavLink
-              href={paths.home()}
+              href={paths.showCategoryPage('earphones')}
               className={`navlink subtitle click-target-helper`}
             >
               Earphones
@@ -52,7 +52,11 @@ function Footer() {
           devoted to helping you get the most out of personal audio. Come and
           visit our demo facility - we&apos;re open 7 days a week.
         </p>
-        <ul aria-labelledby="social-links-label" className={styles.socials}>
+        <ul
+          aria-labelledby="social-links-label"
+          className={styles.socials}
+          role="list"
+        >
           <span hidden id="social-links-label">
             Social links
           </span>
