@@ -32,7 +32,7 @@ export default async function CategoryPage({
                 <li key={id}>
                   <ProductCard
                     id={id}
-                    headingLevel={1}
+                    headingLevel={2}
                     slug={slug}
                     name={name}
                     description={description}

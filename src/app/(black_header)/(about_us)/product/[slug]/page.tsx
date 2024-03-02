@@ -39,7 +39,7 @@ export default async function ProductPage({
       <section className="wrapper">
         <ProductCard
           id={id}
-          headingLevel={2}
+          headingLevel={1}
           name={name}
           description={description}
           image={image}
