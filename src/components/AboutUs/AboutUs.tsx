@@ -23,7 +23,7 @@ function AboutUs() {
           best place to buy your portable audio equipment.
         </p>
       </div>
-      <div className={`image-wrapper box overflow-hidden`}>
+      <div className={`${styles.image} | image-wrapper box overflow-hidden`}>
         <Image src={bestGearImg} alt="" width={540} height={588} />
       </div>
     </article>

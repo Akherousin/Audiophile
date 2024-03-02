@@ -2,6 +2,10 @@
   margin-block-start: 1rem;
 }
 
+.image {
+  background-color: var(--color-bg-grey);
+}
+
 .link {
   margin-block-start: 2.5rem;
 }
