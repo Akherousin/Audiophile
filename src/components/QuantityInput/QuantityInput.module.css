@@ -1,0 +1,50 @@
+.input {
+  font-size: var(--font-size-subtitle);
+
+  line-height: 1.125rem;
+  text-align: center;
+}
+
+.input[data-size='big'] {
+  padding-block: 15px;
+  padding-inline: 15.5px;
+}
+
+.input[data-size='small'] {
+  padding-block: 7px;
+  padding-inline: 11.5px;
+}
+
+.input > * {
+  min-inline-size: 1rem;
+}
+
+.input button {
+  font-size: inherit;
+  font-weight: inherit;
+  background-color: transparent;
+  border: transparent;
+  cursor: pointer;
+  opacity: 0.25;
+}
+
+.input :is(button:hover, button:active) {
+  opacity: 1;
+  color: var(--color-accent);
+}
+
+.input output {
+  color: var(--color-black);
+}
+
+.input[data-size='big'] output {
+  margin-inline: 20px 21px;
+}
+
+.input[data-size='small'] output {
+  margin-inline: 12px 13px;
+}
+
+.input > button:first-of-type {
+  order: -1;
+}

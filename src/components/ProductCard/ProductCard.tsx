@@ -2,11 +2,10 @@ import paths from '@/paths';
 import styles from './ProductCard.module.css';
 
 import Button from '@/components/Button';
+import Source from '@/components/Source';
 import Image from 'next/image';
 
 type ProductCardProps = {
-  id: number;
-  headingLevel: 1 | 2;
   slug: string;
   name: string;
   description: string;
@@ -20,8 +19,6 @@ type ProductCardProps = {
 };
 
 function ProductCard({
-  id,
-  headingLevel,
   slug,
   name,
   description,
@@ -37,13 +34,7 @@ function ProductCard({
             New product
           </p>
         )}
-
-        {headingLevel === 1 ? (
-          <h1 className={`${styles.name} | h2`}>{name}</h1>
-        ) : (
-          <h2 className={`${styles.name} | h2`}>{name}</h2>
-        )}
-
+        <h2 className={`${styles.name} | h2`}>{name}</h2>
         <p className="description opaque">{description}</p>
         <Button
           as="link"
@@ -54,9 +45,11 @@ function ProductCard({
           See Product <span className="visually-hidden">name</span>
         </Button>
       </div>
-      <div className={`${styles.image} | image-wrapper box overflow-hidden`}>
+      <picture className={`image-wrapper box overflow-hidden background-grey`}>
+        <Source src={image.mobile} media="(max-width: 600px)" />
+        <Source src={image.tablet} media="(max-width: 800px)" />
         <Image src={image.desktop} alt="" width={540} height={560} priority />
-      </div>
+      </picture>
     </article>
   );
 }

@@ -3,8 +3,7 @@ import styles from './Header.module.css';
 
 import Logo from '@/components/Logo';
 import NavLink from '@/components/NavLink';
-
-import CartSvg from './CartSvg';
+import Cart from '@/components/Cart';
 
 type HeaderProps = {
   variant: 'dark' | 'black';
@@ -53,10 +52,7 @@ function Header({ variant }: HeaderProps) {
           </ul>
         </nav>
 
-        <button className={`${styles.cart} | click-target-helper`}>
-          <CartSvg />
-          <span className="visually-hidden">Cart</span>
-        </button>
+        <Cart />
       </div>
     </header>
   );

@@ -1,0 +1,84 @@
+.summary {
+  background-color: var(--color-white);
+  padding: 32px 33px;
+  min-inline-size: 21.875rem;
+  block-size: fit-content;
+}
+
+.list {
+  list-style: none;
+  margin-block-start: 1.9375rem;
+}
+
+.list > * + * {
+  margin-block-start: 1rem;
+}
+
+.item {
+  display: grid;
+  column-gap: 1rem;
+  grid-template-columns: auto 1fr 1fr;
+  grid-template-areas:
+    'image name quantity'
+    'image price _';
+}
+
+.image {
+  grid-area: image;
+}
+
+.name,
+.quantity {
+  align-self: end;
+}
+
+.name {
+  grid-area: name;
+  font-weight: var(--font-weight-bold);
+  line-height: 1.5625rem;
+}
+
+.price {
+  grid-area: price;
+  align-self: start;
+}
+
+.quantity {
+  grid-area: quantity;
+  justify-self: end;
+}
+
+.bill-list,
+.summary button {
+  margin-block-start: 2rem;
+}
+
+.bill-list > * + * {
+  margin-block-start: 0.5rem;
+}
+
+.bill-list > *:last-child {
+  margin-block-start: 1.5rem;
+}
+
+.bill-pair {
+  justify-content: space-between;
+}
+
+.bill-price {
+  font-weight: var(--font-weight-bold);
+  font-size: 1.125rem;
+}
+
+.bill-pair:last-of-type .bill-price {
+  color: var(--color-accent);
+}
+
+.term {
+  text-transform: uppercase;
+  font-weight: var(--font-weight-medium);
+}
+
+.summary button {
+  inline-size: 100%;
+}

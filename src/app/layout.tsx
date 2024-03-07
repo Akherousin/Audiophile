@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Manrope } from 'next/font/google';
 import Footer from '@/components/Footer';
 import './globals.css';
+import { CartProvider } from '@/context/CartProvider';
 
 const manrope = Manrope({ subsets: ['latin'] });
 
@@ -18,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={manrope.className}>
-        {children}
+        <CartProvider>{children}</CartProvider>
         <Footer />
       </body>
     </html>

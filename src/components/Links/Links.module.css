@@ -40,8 +40,6 @@
 .link:visited {
   margin-block-start: 15px;
 
-  display: flex;
-  align-items: center;
   justify-content: center;
   gap: 13.32px;
 

@@ -16,11 +16,11 @@ export default async function CategoryPage({
 
   return (
     <>
-      <section className={styles.hero}>
+      <header className={styles.hero}>
         <div className="wrapper">
           <h1 className="h2">{params.category}</h1>
         </div>
-      </section>
+      </header>
 
       <section className="wrapper">
         <ul className={styles.products}>
@@ -31,8 +31,6 @@ export default async function CategoryPage({
               return (
                 <li key={id}>
                   <ProductCard
-                    id={id}
-                    headingLevel={2}
                     slug={slug}
                     name={name}
                     description={description}

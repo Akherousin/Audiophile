@@ -5,7 +5,7 @@ import bestGearImg from '@/assets/shared/desktop/image-best-gear.jpg';
 
 function AboutUs() {
   return (
-    <article className="two-columns" data-reversed-columns="true">
+    <div className="two-columns" data-reversed-columns="true">
       <div className="info">
         <h2>
           Bringing you the{' '}
@@ -23,10 +23,10 @@ function AboutUs() {
           best place to buy your portable audio equipment.
         </p>
       </div>
-      <div className={`${styles.image} | image-wrapper box overflow-hidden`}>
+      <div className={`image-wrapper box overflow-hidden background-grey`}>
         <Image src={bestGearImg} alt="" width={540} height={588} />
       </div>
-    </article>
+    </div>
   );
 }
 

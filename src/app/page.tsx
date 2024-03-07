@@ -19,7 +19,7 @@ export default function Home() {
     <>
       <Header variant="dark" />
       <main>
-        <section className={styles.hero}>
+        <header className={styles.hero}>
           <div className="wrapper overflow-hidden">
             <div className={`${styles.image} | image-wrapper`}>
               <Image src={heroImg} alt="" priority />
@@ -41,7 +41,7 @@ export default function Home() {
               </Button>
             </div>
           </div>
-        </section>
+        </header>
 
         <section className={`${styles.links} | wrapper`}>
           <Links />

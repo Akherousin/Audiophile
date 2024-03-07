@@ -1,0 +1,16 @@
+.dialog {
+  max-inline-size: 44ch;
+  padding: 48px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.dialog article > * + * {
+  margin-block-start: 1rem;
+}
+
+.dialog footer {
+  margin-block-start: 1.5rem;
+  display: flex;
+}

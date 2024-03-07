@@ -35,3 +35,10 @@ export const fetchProductBySlug = async (slug: string) => {
 
   return product;
 };
+
+export const fetchProductById = async (id: number) => {
+  const products = await fetchAllProducts();
+  let product = products.find((product) => product.id === id) || null;
+
+  return product;
+};

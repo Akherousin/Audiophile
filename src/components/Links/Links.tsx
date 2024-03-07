@@ -16,7 +16,7 @@ function Links() {
         <h2 className="h6">Headphones</h2>
         <NavLink
           href={paths.showCategoryPage('headphones')}
-          className={`${styles.link} | subtitle`}
+          className={`${styles.link} | flex-center subtitle`}
         >
           <span>
             Shop <span className="visually-hidden">for Headphones</span>
@@ -35,7 +35,7 @@ function Links() {
         <h2 className="h6">Speakers</h2>
         <NavLink
           href={paths.showCategoryPage('speakers')}
-          className={`${styles.link} | subtitle`}
+          className={`${styles.link} | flex-center subtitle`}
         >
           <span>
             Shop <span className="visually-hidden">for Speakers</span>
@@ -54,7 +54,7 @@ function Links() {
         <h2 className="h6">Earphones</h2>
         <NavLink
           href={paths.showCategoryPage('earphones')}
-          className={`${styles.link} | subtitle`}
+          className={`${styles.link} | flex-center subtitle`}
         >
           <span>
             Shop <span className="visually-hidden">for Earphones</span>

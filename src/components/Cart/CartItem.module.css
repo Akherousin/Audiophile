@@ -1,0 +1,12 @@
+.item {
+  gap: 1rem;
+}
+
+.item > div:nth-of-type(3) {
+  margin-inline-start: auto;
+}
+
+.name {
+  font-weight: var(--font-weight-bold);
+  line-height: 1.5625rem;
+}

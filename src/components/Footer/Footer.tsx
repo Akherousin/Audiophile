@@ -12,7 +12,14 @@ function Footer() {
     <footer className={styles.footer}>
       <div className={`wrapper two-columns`}>
         <Logo />
-        <ul className={`${styles.links} | navlinks`}>
+        <ul
+          className={`navlinks`}
+          aria-labelledby="footer-navlinks-label"
+          role="list"
+        >
+          <span hidden id="footer-navlinks-label">
+            Site navigation links
+          </span>
           <li>
             <NavLink
               href={paths.home()}

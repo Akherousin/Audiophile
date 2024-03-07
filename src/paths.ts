@@ -12,6 +12,10 @@ const paths = {
   showProductPage(slug: string) {
     return `/product/${slug}`;
   },
+
+  showCheckoutPage() {
+    return '/checkout';
+  },
 };
 
 export default paths;

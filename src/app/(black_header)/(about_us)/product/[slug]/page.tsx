@@ -1,5 +1,5 @@
 import styles from './page.module.css';
-import ProductCard from '@/components/ProductCard';
+import ProductDetailCard from '@/components/ProductDetailCard';
 import { fetchProductBySlug } from '@/db/queries';
 import { notFound } from 'next/navigation';
 import GoBackLink from '@/components/GoBackLink';
@@ -21,10 +21,11 @@ export default async function ProductPage({
   const {
     id,
     name,
+    shortName,
     description,
+    price,
     image,
     isNew,
-    slug,
     features,
     includes,
     gallery,
@@ -37,14 +38,14 @@ export default async function ProductPage({
         <GoBackLink />
       </div>
       <section className="wrapper">
-        <ProductCard
+        <ProductDetailCard
           id={id}
-          headingLevel={1}
           name={name}
+          shortName={shortName}
           description={description}
           image={image}
           isNew={isNew}
-          slug={slug}
+          price={price}
           isReversed={false}
         />
       </section>
@@ -60,9 +61,12 @@ export default async function ProductPage({
             {includes.map(({ item, quantity }) => {
               return (
                 <li key={item}>
-                  <p className={styles.item}>
-                    <span className={styles.quantity}>
-                      {quantity} <span aria-hidden="true">x</span>
+                  <p className={`${styles.item} | flex-center`}>
+                    <span className={styles.quantity} data-selection="dark">
+                      {quantity}{' '}
+                      <span aria-hidden="true" data-selection="dark">
+                        x
+                      </span>
                     </span>
 
                     <span className="opaque">{item}</span>

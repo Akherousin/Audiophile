@@ -8,6 +8,7 @@
   letter-spacing: 0.08em;
   transition: all var(--out-animation);
   border: 1px solid;
+  cursor: pointer;
 }
 
 a.button {
