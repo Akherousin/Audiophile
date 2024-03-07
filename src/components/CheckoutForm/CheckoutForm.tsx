@@ -16,6 +16,7 @@ import Button from '../Button';
 import Link from 'next/link';
 import CashSvg from './CashSvg';
 import Summary from './Summary';
+import { useCart } from '@/context/CartProvider';
 
 type StateWithoutErrors = Omit<typeof initialState, 'errors'>;
 type FieldName = keyof StateWithoutErrors;
@@ -26,6 +27,7 @@ type StateError = {
 };
 
 type FormAction =
+  | { type: 'RESET_STATE' }
   | {
       type: 'CHANGE_VALUE';
       payload: {
@@ -94,6 +96,10 @@ const initialState = {
 
 function reducer(state: typeof initialState, action: FormAction) {
   switch (action.type) {
+    case 'RESET_STATE': {
+      return initialState;
+    }
+
     case 'CHANGE_VALUE': {
       const { name } = action.payload;
 
@@ -154,6 +160,9 @@ function reducer(state: typeof initialState, action: FormAction) {
 function CheckoutForm() {
   const [state, dispatch] = useReducer(reducer, initialState);
   const [showErrorSummary, setShowErrorSummary] = useState(false);
+  const [showRedirectingDialog, setShowRedirectingDialog] = useState(false);
+
+  const { emptyCart } = useCart();
 
   const errorSummaryHeadingRef = useRef<HTMLHeadingElement | null>(null);
   const { errors } = state;
@@ -249,7 +258,10 @@ function CheckoutForm() {
           : setShowErrorSummary(true);
       }
 
-      if (target.checkValidity()) alert('there are no errors in your form');
+      if (target.checkValidity()) {
+        dispatch({ type: 'RESET_STATE' });
+        setShowRedirectingDialog(true);
+      }
     }
   };
 
@@ -468,7 +480,7 @@ function CheckoutForm() {
         </fieldset>
       </div>
 
-      <Summary />
+      <Summary showDialog={showRedirectingDialog} />
     </form>
   );
 }
