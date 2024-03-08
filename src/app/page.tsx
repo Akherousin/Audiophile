@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <>
       <Header variant="dark" />
-      <main>
+      <main className={styles.main}>
         <header className={styles.hero}>
           <div className="wrapper overflow-hidden">
             <div className={`${styles.image} | image-wrapper`}>

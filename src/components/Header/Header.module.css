@@ -24,3 +24,10 @@
 .header > div > :last-child {
   justify-self: end;
 }
+
+@media screen and (max-width: 64rem) {
+  .header > div {
+    display: flex;
+    justify-content: space-between;
+  }
+}
