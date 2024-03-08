@@ -6,13 +6,11 @@ import {
   type FormEvent,
   useReducer,
   useEffect,
-  cache,
   useState,
   useRef,
 } from 'react';
 import styles from './CheckoutForm.module.css';
 import Input from './Input';
-import Button from '../Button';
 import Link from 'next/link';
 import CashSvg from './CashSvg';
 import Summary from './Summary';
@@ -265,11 +263,11 @@ function CheckoutForm() {
     }
   };
 
-  const getErrorsByField = cache((inputId: string) => {
+  const getErrorsByField = (inputId: string) => {
     return errors
       .filter((error) => error.inputId === inputId)
       .map((error) => error.message);
-  });
+  };
 
   useEffect(() => {
     if (showErrorSummary) {
