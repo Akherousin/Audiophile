@@ -2,3 +2,17 @@
   font-style: inherit;
   color: var(--color-accent);
 }
+
+@media screen and (max-width: 48rem) {
+  .title {
+    margin-block-start: 0.6rem;
+  }
+}
+
+@media screen and (max-width: 34.375rem) {
+  .title {
+    font-size: 1.75rem;
+    line-height: 2.375rem;
+    margin-block-start: 0;
+  }
+}

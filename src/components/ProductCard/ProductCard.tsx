@@ -4,6 +4,7 @@ import styles from './ProductCard.module.css';
 import Button from '@/components/Button';
 import Source from '@/components/Source';
 import Image from 'next/image';
+import { QUERIES } from '@/constants';
 
 type ProductCardProps = {
   slug: string;
@@ -27,10 +28,13 @@ function ProductCard({
   isReversed,
 }: ProductCardProps) {
   return (
-    <article className={`two-columns`} data-reversed-columns={isReversed}>
+    <article
+      className={`${styles.card} | two-columns`}
+      data-reversed-columns={isReversed}
+    >
       <div className={`info`}>
         {isNew && (
-          <p className="overline" data-selection="dark">
+          <p className={`${styles.overline} | overline`} data-selection="dark">
             New product
           </p>
         )}
@@ -46,8 +50,8 @@ function ProductCard({
         </Button>
       </div>
       <picture className={`image-wrapper box overflow-hidden background-grey`}>
-        <Source src={image.mobile} media="(max-width: 600px)" />
-        <Source src={image.tablet} media="(max-width: 800px)" />
+        <Source src={image.mobile} media={QUERIES.phoneAndSmaller} />
+        <Source src={image.tablet} media={QUERIES.tabletAndSmaller} />
         <Image src={image.desktop} alt="" width={540} height={560} priority />
       </picture>
     </article>

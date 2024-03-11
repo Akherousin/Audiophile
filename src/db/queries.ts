@@ -14,13 +14,13 @@ export const fetchProductsByCategory = async (category: Category) => {
   const products = await fetchAllProducts();
   const filteredProducts = products
     .filter((product) => product.category === category)
-    .map(({ id, slug, name, description, image, isNew }) => {
+    .map(({ id, slug, name, description, categoryImage, isNew }) => {
       return {
         id,
         slug,
         name,
         description,
-        image,
+        categoryImage,
         isNew,
       };
     })

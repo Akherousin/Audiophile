@@ -1,7 +1,22 @@
-.name {
-  margin-block-start: 1rem;
+.overline {
+  margin-block-end: 1rem;
 }
 
 .link {
   margin-block-start: 2.5rem;
+}
+
+@media screen and (max-width: 48rem) {
+  .name {
+    max-inline-size: 15ch;
+    margin-inline: auto;
+  }
+
+  .link {
+    margin-block-start: 1.5rem;
+  }
+
+  .card {
+    gap: 2rem;
+  }
 }

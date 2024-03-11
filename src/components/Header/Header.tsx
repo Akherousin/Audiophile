@@ -1,21 +1,64 @@
+'use client';
+
 import paths from '@/paths';
 import styles from './Header.module.css';
 
 import Logo from '@/components/Logo';
 import NavLink from '@/components/NavLink';
 import Cart from '@/components/Cart';
+import Links from '@/components/Links';
+import MenuSvg from './MenuSvg';
+import { useRef, useState } from 'react';
+import { useOnClickOutside } from '@/hooks/use-on-click-outside.hook';
+import { useMakeInert } from '@/hooks/use-make-inert.hook';
 
 type HeaderProps = {
   variant: 'dark' | 'black';
 };
 
 function Header({ variant }: HeaderProps) {
+  const [isOpen, setIsOpen] = useState(false);
+  const navRef = useRef<HTMLDivElement | null>(null);
+  useOnClickOutside(navRef, () => setIsOpen(false));
+  useMakeInert(isOpen);
+
   return (
     <header className={styles.header} data-variant={variant}>
       <div className="wrapper">
+        <nav
+          className={styles['navigation-mobile']}
+          ref={navRef}
+          onBlur={(e) => {
+            if (!e.currentTarget.contains(e.relatedTarget)) {
+              setIsOpen(false);
+            }
+          }}
+        >
+          <button
+            className={`${styles.button} | click-target-helper`}
+            aria-expanded={isOpen}
+            aria-controls={'mobile-navigation-dropdown'}
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            <MenuSvg />
+            <span className="visually-hidden">
+              {isOpen ? 'Close navigation' : 'Open navigation'}
+            </span>
+          </button>
+          <div
+            className={styles.dropdown}
+            id="mobile-navigation-dropdown"
+            hidden={!isOpen}
+          >
+            <div className="wrapper">
+              <Links />
+            </div>
+          </div>
+        </nav>
+
         <Logo />
 
-        <nav>
+        <nav className={styles.navigation}>
           <ul className={'navlinks'}>
             <li>
               <NavLink

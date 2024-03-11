@@ -1,5 +1,10 @@
-.name {
-  margin-block-start: 1rem;
+.card {
+  grid-template-columns: 540fr 445fr;
+  grid-template-areas: 'image info';
+}
+
+.overline {
+  margin-block-end: 1rem;
 }
 
 .price {
@@ -10,4 +15,44 @@
   display: flex;
   gap: 1rem;
   margin-block-start: 2.5625rem;
+}
+
+@media screen and (max-width: 48rem) {
+  .card {
+    grid-template-columns: 281fr 340fr;
+    grid-template-areas: 'image info';
+  }
+
+  .name {
+    font-size: var(--font-size-h4);
+    line-height: 2rem;
+  }
+
+  .form {
+    margin-block-start: 31px;
+  }
+}
+
+@media screen and (max-width: 34.375rem) {
+  .card {
+    grid-template-columns: 1fr;
+    grid-template-areas: 'image' 'info';
+    gap: 2rem;
+  }
+
+  .card picture {
+    max-block-size: 20.4375rem;
+  }
+
+  .overline {
+    margin-block-end: 1.5rem;
+  }
+
+  .price {
+    margin-block-start: 1.5rem;
+  }
+
+  .form {
+    justify-content: center;
+  }
 }

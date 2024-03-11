@@ -25,7 +25,10 @@ export default async function CategoryPage({
       <section className="wrapper">
         <ul className={styles.products}>
           {products.map(
-            ({ id, slug, name, description, image, isNew }, productIndex) => {
+            (
+              { id, slug, name, description, categoryImage, isNew },
+              productIndex
+            ) => {
               const isOdd = productIndex % 2 !== 0;
 
               return (
@@ -34,7 +37,7 @@ export default async function CategoryPage({
                     slug={slug}
                     name={name}
                     description={description}
-                    image={image}
+                    image={categoryImage}
                     isNew={isNew}
                     isReversed={isOdd}
                   />

@@ -20,3 +20,24 @@
 .products > * + * {
   margin-block-start: var(--breathing-room);
 }
+
+@media screen and (max-width: 48rem) {
+  .hero > div {
+    padding-block: 105px 97px;
+  }
+}
+
+@media screen and (max-width: 34.375rem) {
+  .hero > div {
+    padding-block: 32px;
+  }
+
+  .hero h1 {
+    font-size: 1.75rem;
+    line-height: 2.375rem;
+  }
+
+  .products {
+    margin-block-start: 4rem;
+  }
+}

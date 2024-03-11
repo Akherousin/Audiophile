@@ -160,8 +160,6 @@ function CheckoutForm() {
   const [showErrorSummary, setShowErrorSummary] = useState(false);
   const [showRedirectingDialog, setShowRedirectingDialog] = useState(false);
 
-  const { emptyCart } = useCart();
-
   const errorSummaryHeadingRef = useRef<HTMLHeadingElement | null>(null);
   const { errors } = state;
 

@@ -2,12 +2,17 @@ import styles from './AboutUs.module.css';
 
 import Image from 'next/image';
 import bestGearImg from '@/assets/shared/desktop/image-best-gear.jpg';
+import bestGearImgTablet from '@/assets/shared/tablet/image-best-gear.jpg';
+import bestGearImgMobile from '@/assets/shared/mobile/image-best-gear.jpg';
+
+import Source from '../Source';
+import { QUERIES } from '@/constants';
 
 function AboutUs() {
   return (
     <div className="two-columns" data-reversed-columns="true">
       <div className="info">
-        <h2>
+        <h2 className={styles.title}>
           Bringing you the{' '}
           <em className={`${styles.colored}`} data-selection="dark">
             best
@@ -23,9 +28,11 @@ function AboutUs() {
           best place to buy your portable audio equipment.
         </p>
       </div>
-      <div className={`image-wrapper box overflow-hidden background-grey`}>
+      <picture className={`image-wrapper box overflow-hidden background-grey`}>
+        <Source src={bestGearImgMobile} media={QUERIES.phoneAndSmaller} />
+        <Source src={bestGearImgTablet} media={QUERIES.tabletAndSmaller} />
         <Image src={bestGearImg} alt="" width={540} height={588} />
-      </div>
+      </picture>
     </div>
   );
 }

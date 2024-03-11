@@ -1,60 +1,56 @@
-.main {
-  background-color: var(--color-white);
-}
-
 .hero {
   background-color: var(--color-bg-dark);
   color: var(--color-white);
 }
 
 .hero > div {
+  position: relative;
+}
+
+.hero-info {
+  position: relative;
   padding-block: 128px 158px;
   border-block-start: 1px solid hsla(0, 0%, 100%, 0.2);
-  position: relative;
 }
 
-.info {
-  position: relative;
-}
-
-.info > * + * {
+.hero-info > * + * {
   margin-block-start: 1.5rem;
 }
 
-.info p:first-of-type {
+.hero-info p:first-of-type {
   color: inherit;
 }
 
-.info h1 {
+.hero-title {
   color: inherit;
   max-inline-size: 20ch;
 }
 
-.info p:last-of-type {
+.hero-description {
   opacity: 0.75;
   max-inline-size: 40ch;
 }
 
-.info a {
+.hero-cta {
   margin-block-start: 2.5rem;
 }
 
-.image {
+.hero-image {
   position: absolute;
-  bottom: 0;
+  inset: 0;
   pointer-events: none;
   inline-size: 100%;
   block-size: 100%;
 }
 
-.image img {
+.hero-image img {
   object-fit: cover;
   scale: 115%;
-  object-position: top -40px right 0px;
+  object-position: top -2.5rem right clamp(-6.25rem, -17.0192rem + 16.8269vw, -1.875rem);
 }
 
 .links {
-  margin-block: 200px 168px;
+  margin-block: 12.5rem 10.5rem;
 }
 
 .product1,
@@ -65,10 +61,10 @@
   isolation: isolate;
 }
 
-.product1__pattern,
-.product1__image,
-.product2__image,
-.product3__image {
+.product1-pattern,
+.product1-image,
+.product2-image,
+.product3-image {
   /* Applied to all images in the section */
   position: absolute;
 }
@@ -78,17 +74,23 @@
   margin-block-start: 3rem;
 }
 
+.product1,
 .product2,
-.product3 > div:last-of-type {
-  padding: 101px 95px;
+.product3-info {
+  padding-inline: clamp(64px, -1.2019rem + 7.9327vw, 95px);
 }
 
 .product2,
-.product3 > div {
+.product3-info {
+  padding-block: 101px;
+}
+
+.product2,
+.product3-info {
   background-color: var(--color-bg-grey);
 }
 
-:is(.product1__pattern, .product2__image, .product3__image) > img {
+:is(.product1-pattern, .product2-image, .product3-image) > img {
   object-fit: cover;
 }
 
@@ -100,7 +102,6 @@
   background-color: var(--color-accent);
 
   padding-block: 133px 124px;
-  padding-inline: clamp(64px, -1.2019rem + 7.9327vw, 95px);
 
   display: grid;
   grid-template-columns: 1fr auto;
@@ -111,11 +112,11 @@
 /* .product1__pattern > img {
   object-position: top -35px left -150px;
 } */
-.product1__pattern > img {
-  object-position: top -35px left clamp(-13.875rem, -24.9519rem + 17.3077vw, -9.375rem);
+.product1-pattern > img {
+  object-position: top -2.1875rem left clamp(-13.875rem, -24.9519rem + 17.3077vw, -9.375rem);
 }
 
-.product1__image {
+.product1-image {
   inset: 0;
 }
 
@@ -123,35 +124,35 @@
   object-fit: none;
   object-position: bottom -15px left 140px;
 } */
-.product1__image > img {
+.product1-image > img {
   object-fit: none;
-  object-position: bottom -15px left clamp(4.25rem, -6.8269rem + 17.3077vw, 8.75rem);
+  object-position: bottom -0.9375rem left clamp(4.25rem, -6.8269rem + 17.3077vw, 8.75rem);
 }
 
-.product1 h2 {
+.product1-title {
   color: inherit;
 }
 
-.product1__info {
+.product1-info {
   position: relative;
   grid-column: -1;
   max-inline-size: 21.875rem;
 }
 
-.product1__info p {
+.product1-description {
   opacity: 0.75;
   margin-block-start: 1.5rem;
 }
 
-.product1__info a {
+.product1-link {
   margin-block-start: 2.5rem;
 }
 
-.product2__image {
+.product2-image {
   inset: 0;
 }
 
-.product3__image {
+.product3-image {
   grid-column: 1 /2;
   inset: 0;
 }
@@ -162,10 +163,162 @@
   gap: var(--gap);
 }
 
-.product3 > div:last-of-type {
+.product3-info {
   grid-column: -2 / -1;
 }
 
 .about {
-  margin-block: 200px;
+  margin-block: 12.5rem;
+}
+
+@media screen and (max-width: 59.375rem) {
+  .product1-image {
+    scale: 0.5;
+
+    left: clamp(-10.3125rem, -16.9059rem + 13.7363vw, -8.75rem);
+    bottom: clamp(-6.875rem, -35.886rem + 60.4396vw, 0rem);
+  }
+}
+
+@media screen and (max-width: 48rem) {
+  .hero-info {
+    padding-block: 126px 167px;
+    display: grid;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .hero-image img {
+    object-fit: cover;
+    scale: revert;
+    object-position: bottom -0.3125rem right 50%;
+  }
+
+  .links {
+    margin-block: 9.25rem 6rem;
+  }
+
+  .product1 {
+    grid-template-columns: 1fr;
+    padding-block: 353px 64px;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .product1-info {
+    grid-column: 1;
+  }
+
+  .product1-pattern > img {
+    object-fit: none;
+    object-position: bottom 2.1875rem left 50%;
+  }
+
+  .product1-image {
+    scale: revert;
+    inset: 0;
+  }
+
+  .product1-image > img {
+    object-fit: none;
+    scale: 1.25;
+    object-position: top 7.5rem left 50%;
+  }
+
+  .product2,
+  .product3 {
+    margin-block-start: 2rem;
+  }
+
+  .product3-info {
+    padding-block: 101px;
+    padding-inline: 41px;
+  }
+
+  .about {
+    margin-block: 6rem;
+  }
+}
+
+@media screen and (max-width: 34.375rem) {
+  .hero-info {
+    border: none;
+    padding-block: 108px 112px;
+  }
+
+  .hero-info > * + * {
+    margin-block-start: 1rem;
+  }
+
+  .hero-title {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+
+  .hero-description {
+    margin-block-start: 1.5rem;
+  }
+
+  .hero-cta {
+    margin-block-start: 1.75rem;
+  }
+
+  .links {
+    margin-block: 5.75rem 7.5rem;
+  }
+
+  .product1,
+  .product2,
+  .product3-info {
+    padding-inline: 24px;
+  }
+
+  .product2,
+  .product3 {
+    margin-block-start: 1.5rem;
+  }
+
+  .product1 {
+    padding-block: 294px 55px;
+  }
+
+  .product1-pattern > img {
+    object-fit: cover;
+    scale: 170%;
+    object-position: bottom 0.1875rem left 50%;
+  }
+
+  .product1-image > img {
+    scale: revert;
+    object-position: top 4.1rem left 50%;
+  }
+
+  .product1-title {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+    max-inline-size: 10ch;
+    margin-inline: auto;
+  }
+
+  .product1-link {
+    margin-block-start: 1.5rem;
+  }
+
+  .product3 {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .product3-image {
+    position: unset;
+  }
+
+  .product3-info {
+    padding-block: 41px;
+  }
+
+  .about {
+    margin-block: 7.5rem;
+  }
 }

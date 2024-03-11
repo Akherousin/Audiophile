@@ -18,6 +18,7 @@
 
 .input {
   grid-area: input;
+  min-inline-size: 0;
   margin-block-start: 0.5625rem;
   border: 1px solid hsl(0, 0%, 81%);
   border-radius: var(--box-radius);

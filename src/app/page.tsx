@@ -5,14 +5,27 @@ import Button from '@/components/Button';
 import Image from 'next/image';
 
 import heroImg from '@/assets/home/desktop/image-hero.png';
+import heroImgTablet from '@/assets/home/tablet/image-hero.png';
+import heroImgMobile from '@/assets/home/mobile/image-hero.png';
+
 import patternImg from '@/assets/home/desktop/pattern-circles.svg';
 import speakerZX9Img from '@/assets/home/desktop/image-speaker-zx9.png';
+import speakerZX9ImgTablet from '@/assets/home/tablet/image-speaker-zx9.png';
+import speakerZX9ImgMobile from '@/assets/home/mobile/image-speaker-zx9.png';
+
 import speakerZX7Img from '@/assets/home/desktop/image-speaker-zx7.jpg';
+import speakerZX7ImgTablet from '@/assets/home/tablet/image-speaker-zx7.jpg';
+import speakerZX7ImgMobile from '@/assets/home/mobile/image-speaker-zx7.jpg';
+
 import earphonesYX1Img from '@/assets/home/desktop/image-earphones-yx1.jpg';
+import earphonesYX1ImgTablet from '@/assets/home/tablet/image-earphones-yx1.jpg';
+import earphonesYX1ImgMobile from '@/assets/home/mobile/image-earphones-yx1.jpg';
 
 import Header from '@/components/Header';
 import Links from '@/components/Links';
 import AboutUs from '@/components/AboutUs';
+import Source from '@/components/Source';
+import { QUERIES } from '@/constants';
 
 export default function Home() {
   return (
@@ -21,13 +34,15 @@ export default function Home() {
       <main className={styles.main}>
         <header className={styles.hero}>
           <div className="wrapper overflow-hidden">
-            <div className={`${styles.image} | image-wrapper`}>
+            <picture className={`${styles['hero-image']} | image-wrapper`}>
+              <Source src={heroImgMobile} media={QUERIES.phoneAndSmaller} />
+              <Source src={heroImgTablet} media={QUERIES.tabletAndSmaller} />
               <Image src={heroImg} alt="" priority />
-            </div>
-            <div className={styles.info}>
+            </picture>
+            <div className={styles['hero-info']}>
               <p className="overline opaque">New product</p>
-              <h1>XX99 Mark II Headphones</h1>
-              <p>
+              <h1 className={styles['hero-title']}>XX99 Mark II Headphones</h1>
+              <p className={styles['hero-description']}>
                 Experience natural, lifelike audio and exceptional build quality
                 made for the passionate music enthusiast.
               </p>
@@ -35,6 +50,7 @@ export default function Home() {
                 as="link"
                 href={paths.showProductPage('xx99-mark-two-headphones')}
                 variant="colored"
+                className={styles['hero-cta']}
               >
                 See product{' '}
                 <span className="visually-hidden">XX99 Mark II Headphones</span>
@@ -49,18 +65,32 @@ export default function Home() {
 
         <section className="wrapper">
           <article className={`${styles.product1} | box overflow-hidden`}>
-            <div className={`${styles.product1__pattern} | image-wrapper`}>
+            <div className={`${styles['product1-pattern']} | image-wrapper`}>
               <Image src={patternImg} alt="" />
             </div>
-
-            <div className={`${styles.product1__image} | image-wrapper`}>
+            <picture className={`${styles['product1-image']} | image-wrapper`}>
+              <Source
+                src={speakerZX9ImgMobile}
+                media={QUERIES.phoneAndSmaller}
+              />
+              <Source
+                src={speakerZX9ImgTablet}
+                media={QUERIES.tabletAndSmaller}
+              />
               <Image src={speakerZX9Img} alt="" />
-            </div>
-            <div className={styles.product1__info}>
-              <h2 className="h1" data-selection="dark">
+            </picture>
+
+            <div className={styles['product1-info']}>
+              <h2
+                className={`${styles['product1-title']} | h1`}
+                data-selection="dark"
+              >
                 ZX9 SPEAKER
               </h2>
-              <p data-selection="dark">
+              <p
+                data-selection="dark"
+                className={styles['product1-description']}
+              >
                 Upgrade to premium speakers that are phenomenally built to
                 deliver truly remarkable sound.
               </p>
@@ -68,6 +98,7 @@ export default function Home() {
                 as="link"
                 variant="black"
                 href={paths.showProductPage('zx9-speaker')}
+                className={styles['product1-link']}
               >
                 See product <span className="visually-hidden">ZX9 SPEAKER</span>
               </Button>
@@ -75,9 +106,17 @@ export default function Home() {
           </article>
 
           <article className={`${styles.product2} | box overflow-hidden`}>
-            <div className={`${styles.product2__image} | image-wrapper`}>
+            <picture className={`${styles['product2-image']} | image-wrapper`}>
+              <Source
+                src={speakerZX7ImgMobile}
+                media={QUERIES.phoneAndSmaller}
+              />
+              <Source
+                src={speakerZX7ImgTablet}
+                media={QUERIES.tabletAndSmaller}
+              />
               <Image src={speakerZX7Img} alt="" />
-            </div>
+            </picture>
 
             <div>
               <h2 className="h4">ZX7 SPEAKER</h2>
@@ -92,12 +131,20 @@ export default function Home() {
           </article>
 
           <article className={`${styles.product3}`}>
-            <div
-              className={`${styles.product3__image} | image-wrapper box overflow-hidden`}
+            <picture
+              className={`${styles['product3-image']} | image-wrapper box overflow-hidden`}
             >
+              <Source
+                src={earphonesYX1ImgMobile}
+                media={QUERIES.phoneAndSmaller}
+              />
+              <Source
+                src={earphonesYX1ImgTablet}
+                media={QUERIES.tabletAndSmaller}
+              />
               <Image src={earphonesYX1Img} alt="" />
-            </div>
-            <div className="box">
+            </picture>
+            <div className={`${styles['product3-info']} | box`}>
               <h2 className="h4">YX1 EARPHONES</h2>
               <Button
                 as={'link'}

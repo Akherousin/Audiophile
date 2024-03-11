@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { formatPrice } from '@/helpers';
 import Button from '../Button';
 import SuccessSvg from './SuccessSvg';
-import { useEffect, useRef } from 'react';
+import { Suspense, useEffect, useRef } from 'react';
 import paths from '@/paths';
 import { useEscapeKey } from '@/hooks/use-escape-key.hook';
 import { useRouter } from 'next/navigation';
@@ -120,7 +120,7 @@ function Summary({ showDialog }: SummaryProps) {
                 </p>
               </div>
 
-              {cartItems.length > 2 && (
+              {cartItems.length > 1 && (
                 <p className={styles.others}>
                   and {cartItems.length - 1} other item(s)
                 </p>

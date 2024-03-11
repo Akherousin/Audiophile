@@ -13,7 +13,7 @@ function Links() {
   return (
     <ul className={styles.list}>
       <li className={`${styles.item} | box`}>
-        <h2 className="h6">Headphones</h2>
+        <h2 className={`${styles.title} | h6`}>Headphones</h2>
         <NavLink
           href={paths.showCategoryPage('headphones')}
           className={`${styles.link} | flex-center subtitle`}
@@ -32,7 +32,7 @@ function Links() {
       </li>
 
       <li className={`${styles.item} | box`}>
-        <h2 className="h6">Speakers</h2>
+        <h2 className={`${styles.title} | h6`}>Speakers</h2>
         <NavLink
           href={paths.showCategoryPage('speakers')}
           className={`${styles.link} | flex-center subtitle`}
@@ -51,7 +51,7 @@ function Links() {
       </li>
 
       <li className={`${styles.item} | box`}>
-        <h2 className="h6">Earphones</h2>
+        <h2 className={`${styles.title} | h6`}>Earphones</h2>
         <NavLink
           href={paths.showCategoryPage('earphones')}
           className={`${styles.link} | flex-center subtitle`}

@@ -1,7 +1,23 @@
+.background {
+  background-color: var(--color-bg-grey);
+}
+
 .back {
-  margin-block: 4.9375rem 2.375rem;
+  padding-block: 4.9375rem 2.375rem;
 }
 
 .main {
-  margin-block-end: 8.8125rem;
+  padding-block-end: 8.8125rem;
+}
+
+@media screen and (max-width: 48rem) {
+  .main {
+    padding-block-end: 7.25rem;
+  }
+}
+
+@media screen and (max-width: 34.375rem) {
+  .back {
+    padding-block: 1rem 1.5rem;
+  }
 }

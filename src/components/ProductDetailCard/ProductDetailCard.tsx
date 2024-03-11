@@ -9,6 +9,8 @@ import { type FormEvent, useState, useEffect } from 'react';
 import QuantityInput from '@/components/QuantityInput';
 
 import { formatPrice } from '@/helpers';
+import Source from '../Source';
+import { QUERIES } from '@/constants';
 
 type ProductDetailCardProps = {
   id: number;
@@ -22,7 +24,6 @@ type ProductDetailCardProps = {
     desktop: string;
   };
   isNew: boolean;
-  isReversed: boolean;
 };
 
 function ProductDetailCard({
@@ -33,7 +34,6 @@ function ProductDetailCard({
   price,
   image,
   isNew,
-  isReversed,
 }: ProductDetailCardProps) {
   const [quantity, setQuantity] = useState(1);
   const { addCartItem } = useCart();
@@ -59,10 +59,10 @@ function ProductDetailCard({
   };
 
   return (
-    <article className={`two-columns`} data-reversed-columns={isReversed}>
+    <article className={`${styles.card} | two-columns`}>
       <div className={`info`}>
         {isNew && (
-          <p className="overline" data-selection="dark">
+          <p className={`${styles.overline} | overline`} data-selection="dark">
             New product
           </p>
         )}
@@ -90,9 +90,11 @@ function ProductDetailCard({
           </Button>
         </form>
       </div>
-      <div className={`image-wrapper box overflow-hidden background-grey`}>
+      <picture className={`image-wrapper box overflow-hidden background-grey`}>
+        <Source src={image.mobile} media={QUERIES.phoneAndSmaller} />
+        <Source src={image.tablet} media={QUERIES.tabletAndSmaller} />
         <Image src={image.desktop} alt="" width={540} height={560} priority />
-      </div>
+      </picture>
     </article>
   );
 }

@@ -96,6 +96,13 @@ h6 {
   --breathing-room: 10rem;
 }
 
+@media screen and (max-width: 48rem) {
+  :root {
+    --gap: 11px;
+    --breathing-room: 7.5rem;
+  }
+}
+
 /* General */
 
 h1,
@@ -176,21 +183,7 @@ body {
   line-height: 1.5625rem;
   color: var(--color-black);
   white-space: pre-line;
-  background-color: var(--color-bg-grey);
   position: relative;
-}
-
-body::after {
-  /* content: ''; */
-  background-image: url('/bg.png');
-  top: 0;
-  width: 100%;
-  height: 3950px;
-  position: absolute;
-  z-index: 10;
-  opacity: 0.5;
-
-  pointer-events: none;
 }
 
 .navlinks {
@@ -274,7 +267,8 @@ body::after {
 }
 
 .wrapper {
-  --padding-inline: 40px;
+  --padding-inline: clamp(24px, -1.0229rem + 7.3394vw, 40px);
+
   box-sizing: content-box;
   max-inline-size: var(--max-inline-size);
   margin-inline: auto;
@@ -295,9 +289,6 @@ body::after {
   display: grid;
   grid-template-columns: 635fr 350fr;
   column-gap: 125px;
-}
-
-[data-reversed-columns] {
   align-items: center;
 }
 
@@ -309,6 +300,10 @@ body::after {
 .two-columns[data-reversed-columns='true'] {
   grid-template-columns: 445fr 540fr;
   grid-template-areas: 'info image';
+}
+
+.two-columns img {
+  object-fit: cover;
 }
 
 .two-columns .info {
@@ -340,4 +335,71 @@ body::after {
   font-size: 0.75rem;
   line-height: 1rem;
   letter-spacing: -0.02em;
+}
+
+@media screen and (max-width: 48rem) {
+  .overline {
+    font-size: var(--font-size-overline);
+    line-height: 1rem;
+  }
+
+  .two-columns {
+    column-gap: 4.3125rem;
+    row-gap: 3.25rem;
+  }
+
+  .two-columns[data-reversed-columns='true'],
+  .two-columns[data-reversed-columns='false'] {
+    grid-template-columns: 1fr;
+    grid-template-areas: 'image' 'info';
+    text-align: center;
+  }
+
+  :is(
+      .two-columns[data-reversed-columns='true'],
+      .two-columns[data-reversed-columns='false']
+    )
+    .info {
+    grid-area: info;
+    padding-inline: 58px;
+  }
+}
+
+@media screen and (max-width: 34.375rem) {
+  h2,
+  .h2 {
+    font-size: 1.75rem;
+    line-height: 2.375rem;
+  }
+
+  h3,
+  .h3 {
+    font-size: 1.5rem;
+    line-height: 2.25rem;
+  }
+
+  .two-columns {
+    row-gap: 2.5rem;
+  }
+
+  :is(
+      .two-columns[data-reversed-columns='true'],
+      .two-columns[data-reversed-columns='false']
+    )
+    .info {
+    grid-area: info;
+    padding-inline: 0;
+  }
+
+  .navlinks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* margin-inline: auto; */
+    gap: 1rem;
+  }
+
+  .two-columns .description {
+    margin-block-start: 1.5rem;
+  }
 }

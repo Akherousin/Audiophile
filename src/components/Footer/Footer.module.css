@@ -2,6 +2,22 @@
   background-color: var(--color-bg-dark);
   color: var(--color-white);
   padding-block: 75px 48px;
+  position: relative;
+}
+
+.footer > div {
+  display: grid;
+  grid-template-columns: 635fr 350fr;
+  column-gap: 125px;
+}
+
+.footer > div::before {
+  content: '';
+  block-size: 4px;
+  inline-size: 101px;
+  background-color: var(--color-accent);
+  position: absolute;
+  top: 0;
 }
 
 .footer ul {
@@ -10,6 +26,7 @@
 }
 
 .footer a {
+  display: inline-block;
   color: inherit;
 }
 
@@ -19,6 +36,7 @@
 
 .footer p:last-of-type {
   margin-block-start: 3.5rem;
+  grid-column: span 2;
 
   font-weight: var(--font-weight-bold);
 }
@@ -38,4 +56,83 @@
 .socials a:hover path {
   fill: var(--color-accent);
   transition: fill var(--enter-animation);
+}
+
+@media screen and (max-width: 48rem) {
+  .footer {
+    padding-block: 60px 46px;
+  }
+
+  .footer > div {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer ul {
+    justify-self: start;
+  }
+
+  .footer p:first-of-type {
+    margin-block-start: 0;
+    text-align: start;
+  }
+
+  .socials,
+  .footer p:last-of-type {
+    grid-column: 1 / 2;
+    grid-row: 4 / 5;
+  }
+  .footer p:last-of-type {
+    margin-block-start: 3rem;
+    text-align: start;
+  }
+  .socials {
+    margin-inline-start: auto;
+    margin-block-end: 0;
+  }
+}
+
+@media screen and (max-width: 34.375rem) {
+  .footer {
+    text-align: center;
+    padding-block: 52px 38px;
+  }
+
+  .footer a {
+    margin-inline: auto;
+  }
+  .footer > div {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .footer :global(.navlinks) {
+    margin-inline: auto;
+  }
+
+  .footer p:is(:first-of-type, :last-of-type) {
+    text-align: center;
+  }
+
+  .socials,
+  .footer p:last-of-type {
+    grid-row: unset;
+  }
+
+  .footer p:last-of-type {
+    margin: 0;
+  }
+
+  .socials {
+    margin-inline: auto;
+    grid-row: 5 / 6;
+  }
+
+  .footer > div::before {
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+  }
 }

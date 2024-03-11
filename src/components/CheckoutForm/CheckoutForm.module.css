@@ -1,6 +1,6 @@
 .form {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 730fr 350fr;
   gap: var(--gap);
 }
 
@@ -86,4 +86,36 @@
 
 .error-link:is(:hover, :active) {
   text-decoration: none;
+}
+
+@media screen and (max-width: 48rem) {
+  .form {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media screen and (max-width: 34.375rem) {
+  .form-inputs {
+    padding: 24px 24px 31px 24px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .group:nth-of-type(2) .grid > *:first-child,
+  .payment-method > div {
+    grid-column: unset;
+  }
+
+  .payment-method {
+    margin-block-end: 2rem;
+  }
+
+  .group:nth-of-type(2),
+  .group:nth-of-type(3) {
+    margin-block-start: 2rem;
+  }
 }

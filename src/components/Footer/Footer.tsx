@@ -10,7 +10,7 @@ import InstagramSvg from './InstagramSvg';
 function Footer() {
   return (
     <footer className={styles.footer}>
-      <div className={`wrapper two-columns`}>
+      <div className={`wrapper`}>
         <Logo />
         <ul
           className={`navlinks`}

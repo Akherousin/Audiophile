@@ -1,7 +1,13 @@
 .links {
-  margin-block-start: calc(var(--breathing-room) + 80px);
+  margin-block-start: calc(var(--breathing-room) + 5rem);
 }
 
 .about {
   margin-block: var(--breathing-room);
+}
+
+@media screen and (max-width: 48rem) {
+  .links {
+    margin-block-start: calc(var(--breathing-room) + 3.25rem);
+  }
 }
