@@ -37,11 +37,9 @@
   .card {
     grid-template-columns: 1fr;
     grid-template-areas: 'image' 'info';
-    gap: 2rem;
-  }
+    grid-template-rows: auto;
 
-  .card picture {
-    max-block-size: 20.4375rem;
+    gap: 2rem;
   }
 
   .overline {
