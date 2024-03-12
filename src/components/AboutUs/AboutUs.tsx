@@ -31,7 +31,12 @@ function AboutUs() {
       <picture className={`image-wrapper box overflow-hidden background-grey`}>
         <Source src={bestGearImgMobile} media={QUERIES.phoneAndSmaller} />
         <Source src={bestGearImgTablet} media={QUERIES.tabletAndSmaller} />
-        <Image src={bestGearImg} alt="" width={540} height={588} />
+        <Image
+          src={bestGearImg}
+          alt="A man enjoying music with sleek headphones against a geometric-patterned backdrop, in a serene black and white setting."
+          width={540}
+          height={588}
+        />
       </picture>
     </div>
   );

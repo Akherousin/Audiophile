@@ -7,13 +7,15 @@
     "image": {
       "mobile": "/assets/product-yx1-earphones/mobile/image-product.jpg",
       "tablet": "/assets/product-yx1-earphones/tablet/image-product.jpg",
-      "desktop": "/assets/product-yx1-earphones/desktop/image-product.jpg"
+      "desktop": "/assets/product-yx1-earphones/desktop/image-product.jpg",
+      "alt": "Elegant matte black earphone case with a smooth finish, providing stylish protection and portability for earphones."
     },
     "category": "earphones",
     "categoryImage": {
       "mobile": "/assets/product-yx1-earphones/mobile/image-category-page-preview.jpg",
       "tablet": "/assets/product-yx1-earphones/tablet/image-category-page-preview.jpg",
-      "desktop": "/assets/product-yx1-earphones/desktop/image-category-page-preview.jpg"
+      "desktop": "/assets/product-yx1-earphones/desktop/image-category-page-preview.jpg",
+      "alt": "Elegant matte black earphone case with a smooth finish, providing stylish protection and portability for earphones."
     },
     "isNew": true,
     "price": 599,
@@ -45,17 +47,20 @@
       "first": {
         "mobile": "/assets/product-yx1-earphones/mobile/image-gallery-1.jpg",
         "tablet": "/assets/product-yx1-earphones/tablet/image-gallery-1.jpg",
-        "desktop": "/assets/product-yx1-earphones/desktop/image-gallery-1.jpg"
+        "desktop": "/assets/product-yx1-earphones/desktop/image-gallery-1.jpg",
+        "alt": "A pair of wireless in-ear earphones, with a dark, textured surface that suggests a premium, matte finish. The ear tips contrast in color, made of a soft silicone material.  The grayscale presentation of the image accentuates the earphones' sophisticated design."
       },
       "second": {
         "mobile": "/assets/product-yx1-earphones/mobile/image-gallery-2.jpg",
         "tablet": "/assets/product-yx1-earphones/tablet/image-gallery-2.jpg",
-        "desktop": "/assets/product-yx1-earphones/desktop/image-gallery-2.jpg"
+        "desktop": "/assets/product-yx1-earphones/desktop/image-gallery-2.jpg",
+        "alt": "A pair of black in-ear earphones, neatly placed within a small, round case that ensures their safety and portability. The earphones are modern and compact, with a dark, textured surface that gives them a sophisticated appearance. The black case, with its smooth surface texture, appears durable and is designed for convenience"
       },
       "third": {
         "mobile": "/assets/product-yx1-earphones/mobile/image-gallery-3.jpg",
         "tablet": "/assets/product-yx1-earphones/tablet/image-gallery-3.jpg",
-        "desktop": "/assets/product-yx1-earphones/desktop/image-gallery-3.jpg"
+        "desktop": "/assets/product-yx1-earphones/desktop/image-gallery-3.jpg",
+        "alt": "A pair of black wireless earbuds rest next to a small black charging case on a flat black surface. View from the top."
       }
     },
     "others": [
@@ -96,13 +101,15 @@
     "image": {
       "mobile": "/assets/product-xx59-headphones/mobile/image-product.jpg",
       "tablet": "/assets/product-xx59-headphones/tablet/image-product.jpg",
-      "desktop": "/assets/product-xx59-headphones/desktop/image-product.jpg"
+      "desktop": "/assets/product-xx59-headphones/desktop/image-product.jpg",
+      "alt": "A pair of white headphones on a white background. The headphones are wireless, on-ear headphones. They have a plastic headband that curves around the top of the headphones and connects the two ear cups. The ear cups are oval-shaped and covered in a white, soft-looking material."
     },
     "category": "headphones",
     "categoryImage": {
       "mobile": "/assets/product-xx59-headphones/mobile/image-category-page-preview.jpg",
       "tablet": "/assets/product-xx59-headphones/tablet/image-category-page-preview.jpg",
-      "desktop": "/assets/product-xx59-headphones/desktop/image-category-page-preview.jpg"
+      "desktop": "/assets/product-xx59-headphones/desktop/image-category-page-preview.jpg",
+      "alt": "A pair of white headphones on a white background. The headphones are wireless, on-ear headphones. They have a plastic headband that curves around the top of the headphones and connects the two ear cups. The ear cups are oval-shaped and covered in a white, soft-looking material."
     },
     "isNew": false,
     "price": 899,
@@ -130,17 +137,20 @@
       "first": {
         "mobile": "/assets/product-xx59-headphones/mobile/image-gallery-1.jpg",
         "tablet": "/assets/product-xx59-headphones/tablet/image-gallery-1.jpg",
-        "desktop": "/assets/product-xx59-headphones/desktop/image-gallery-1.jpg"
+        "desktop": "/assets/product-xx59-headphones/desktop/image-gallery-1.jpg",
+        "alt": "Black and white image of a woman enjoying music with white XX59 Headphones, her hair flowing with the rhythm, embodying the joy of sound."
       },
       "second": {
         "mobile": "/assets/product-xx59-headphones/mobile/image-gallery-2.jpg",
         "tablet": "/assets/product-xx59-headphones/tablet/image-gallery-2.jpg",
-        "desktop": "/assets/product-xx59-headphones/desktop/image-gallery-2.jpg"
+        "desktop": "/assets/product-xx59-headphones/desktop/image-gallery-2.jpg",
+        "alt": "A pair of white over-ear whireless headphones resting on a stack of hardcover books."
       },
       "third": {
         "mobile": "/assets/product-xx59-headphones/mobile/image-gallery-3.jpg",
         "tablet": "/assets/product-xx59-headphones/tablet/image-gallery-3.jpg",
-        "desktop": "/assets/product-xx59-headphones/desktop/image-gallery-3.jpg"
+        "desktop": "/assets/product-xx59-headphones/desktop/image-gallery-3.jpg",
+        "alt": "Close-up of a woman's hand holding white XX59 Headphones."
       }
     },
     "others": [
@@ -181,13 +191,15 @@
     "image": {
       "mobile": "/assets/product-xx99-mark-one-headphones/mobile/image-product.jpg",
       "tablet": "/assets/product-xx99-mark-one-headphones/tablet/image-product.jpg",
-      "desktop": "/assets/product-xx99-mark-one-headphones/desktop/image-product.jpg"
+      "desktop": "/assets/product-xx99-mark-one-headphones/desktop/image-product.jpg",
+      "alt": "Black over-ear studio headphones with gold accents, folded and resting on a clean white background."
     },
     "category": "headphones",
     "categoryImage": {
       "mobile": "/assets/product-xx99-mark-one-headphones/mobile/image-category-page-preview.jpg",
       "tablet": "/assets/product-xx99-mark-one-headphones/tablet/image-category-page-preview.jpg",
-      "desktop": "/assets/product-xx99-mark-one-headphones/desktop/image-category-page-preview.jpg"
+      "desktop": "/assets/product-xx99-mark-one-headphones/desktop/image-category-page-preview.jpg",
+      "alt": "Black over-ear studio headphones with gold accents, folded and resting on a clean white background."
     },
     "isNew": false,
     "price": 1750,
@@ -215,17 +227,20 @@
       "first": {
         "mobile": "/assets/product-xx99-mark-one-headphones/mobile/image-gallery-1.jpg",
         "tablet": "/assets/product-xx99-mark-one-headphones/tablet/image-gallery-1.jpg",
-        "desktop": "/assets/product-xx99-mark-one-headphones/desktop/image-gallery-1.jpg"
+        "desktop": "/assets/product-xx99-mark-one-headphones/desktop/image-gallery-1.jpg",
+        "alt": "A pair of XX99 Mark I Headphones hanging from a microphone stand, set against a backdrop with soft bokeh lights."
       },
       "second": {
         "mobile": "/assets/product-xx99-mark-one-headphones/mobile/image-gallery-2.jpg",
         "tablet": "/assets/product-xx99-mark-one-headphones/tablet/image-gallery-2.jpg",
-        "desktop": "/assets/product-xx99-mark-one-headphones/desktop/image-gallery-2.jpg"
+        "desktop": "/assets/product-xx99-mark-one-headphones/desktop/image-gallery-2.jpg",
+        "alt": "Pair of black XX99 Mark I Headphones resting on a white wooden table next to a black watch and white sneakers."
       },
       "third": {
         "mobile": "/assets/product-xx99-mark-one-headphones/mobile/image-gallery-3.jpg",
         "tablet": "/assets/product-xx99-mark-one-headphones/tablet/image-gallery-3.jpg",
-        "desktop": "/assets/product-xx99-mark-one-headphones/desktop/image-gallery-3.jpg"
+        "desktop": "/assets/product-xx99-mark-one-headphones/desktop/image-gallery-3.jpg",
+        "alt": "Black and white over-ear XX99 Mark I Headphones with Christmas lights wrapped around them, resting on a closed laptop computer."
       }
     },
     "others": [
@@ -266,13 +281,15 @@
     "image": {
       "mobile": "/assets/product-xx99-mark-two-headphones/mobile/image-product.jpg",
       "tablet": "/assets/product-xx99-mark-two-headphones/tablet/image-product.jpg",
-      "desktop": "/assets/product-xx99-mark-two-headphones/desktop/image-product.jpg"
+      "desktop": "/assets/product-xx99-mark-two-headphones/desktop/image-product.jpg",
+      "alt": "Black over-ear headphones resting on a white background. The headphones have a thick headband that curves down to meet the earcups. The earcups are plush and well-padded."
     },
     "category": "headphones",
     "categoryImage": {
       "mobile": "/assets/product-xx99-mark-two-headphones/mobile/image-category-page-preview.jpg",
       "tablet": "/assets/product-xx99-mark-two-headphones/tablet/image-category-page-preview.jpg",
-      "desktop": "/assets/product-xx99-mark-two-headphones/desktop/image-category-page-preview.jpg"
+      "desktop": "/assets/product-xx99-mark-two-headphones/desktop/image-category-page-preview.jpg",
+      "alt": "Black over-ear headphones resting on a white background. The headphones have a thick headband that curves down to meet the earcups. The earcups are plush and well-padded."
     },
     "isNew": true,
     "price": 2999,
@@ -304,17 +321,20 @@
       "first": {
         "mobile": "/assets/product-xx99-mark-two-headphones/mobile/image-gallery-1.jpg",
         "tablet": "/assets/product-xx99-mark-two-headphones/tablet/image-gallery-1.jpg",
-        "desktop": "/assets/product-xx99-mark-two-headphones/desktop/image-gallery-1.jpg"
+        "desktop": "/assets/product-xx99-mark-two-headphones/desktop/image-gallery-1.jpg",
+        "alt": "A man enjoying music with sleek XX99 Mark II against a geometric-patterned backdrop."
       },
       "second": {
         "mobile": "/assets/product-xx99-mark-two-headphones/mobile/image-gallery-2.jpg",
         "tablet": "/assets/product-xx99-mark-two-headphones/tablet/image-gallery-2.jpg",
-        "desktop": "/assets/product-xx99-mark-two-headphones/desktop/image-gallery-2.jpg"
+        "desktop": "/assets/product-xx99-mark-two-headphones/desktop/image-gallery-2.jpg",
+        "alt": "XX99 Mark II headphones resting on a table beside a phone and magazine, symbolizing a moment of relaxation and personal time."
       },
       "third": {
         "mobile": "/assets/product-xx99-mark-two-headphones/mobile/image-gallery-3.jpg",
         "tablet": "/assets/product-xx99-mark-two-headphones/tablet/image-gallery-3.jpg",
-        "desktop": "/assets/product-xx99-mark-two-headphones/desktop/image-gallery-3.jpg"
+        "desktop": "/assets/product-xx99-mark-two-headphones/desktop/image-gallery-3.jpg",
+        "alt": "Close up of black XX99 Mark II headphones on a black background. The headphones have a sleek, minimalist design with ear tips and a glossy finish."
       }
     },
     "others": [
@@ -355,13 +375,15 @@
     "image": {
       "mobile": "/assets/product-zx7-speaker/mobile/image-product.jpg",
       "tablet": "/assets/product-zx7-speaker/tablet/image-product.jpg",
-      "desktop": "/assets/product-zx7-speaker/desktop/image-product.jpg"
+      "desktop": "/assets/product-zx7-speaker/desktop/image-product.jpg",
+      "alt": "Black speaker with round woofer and tweeter, designed for high-quality audio output, isolated on a white background."
     },
     "category": "speakers",
     "categoryImage": {
       "mobile": "/assets/product-zx7-speaker/mobile/image-category-page-preview.jpg",
       "tablet": "/assets/product-zx7-speaker/tablet/image-category-page-preview.jpg",
-      "desktop": "/assets/product-zx7-speaker/desktop/image-category-page-preview.jpg"
+      "desktop": "/assets/product-zx7-speaker/desktop/image-category-page-preview.jpg",
+      "alt": "Black speaker with round woofer and tweeter, designed for high-quality audio output, isolated on a white background."
     },
     "isNew": false,
     "price": 3500,
@@ -393,17 +415,20 @@
       "first": {
         "mobile": "/assets/product-zx7-speaker/mobile/image-gallery-1.jpg",
         "tablet": "/assets/product-zx7-speaker/tablet/image-gallery-1.jpg",
-        "desktop": "/assets/product-zx7-speaker/desktop/image-gallery-1.jpg"
+        "desktop": "/assets/product-zx7-speaker/desktop/image-gallery-1.jpg",
+        "alt": "Close-up view of a speaker's detailed design, featuring a reflective dust cap and textured concentric circles."
       },
       "second": {
         "mobile": "/assets/product-zx7-speaker/mobile/image-gallery-2.jpg",
         "tablet": "/assets/product-zx7-speaker/tablet/image-gallery-2.jpg",
-        "desktop": "/assets/product-zx7-speaker/desktop/image-gallery-2.jpg"
+        "desktop": "/assets/product-zx7-speaker/desktop/image-gallery-2.jpg",
+        "alt": "A professional music studio environment, where a person is seen from behind, working intently in front of computer monitor. A pair of ZX7 Speakers seen behind the monitor."
       },
       "third": {
         "mobile": "/assets/product-zx7-speaker/mobile/image-gallery-3.jpg",
         "tablet": "/assets/product-zx7-speaker/tablet/image-gallery-3.jpg",
-        "desktop": "/assets/product-zx7-speaker/desktop/image-gallery-3.jpg"
+        "desktop": "/assets/product-zx7-speaker/desktop/image-gallery-3.jpg",
+        "alt": "ZX7 speaker in black and white, highlighting its sleek design with a prominent woofer, set against a minimalist wooden table backdrop"
       }
     },
     "others": [
@@ -444,13 +469,15 @@
     "image": {
       "mobile": "/assets/product-zx9-speaker/mobile/image-product.jpg",
       "tablet": "/assets/product-zx9-speaker/tablet/image-product.jpg",
-      "desktop": "/assets/product-zx9-speaker/desktop/image-product.jpg"
+      "desktop": "/assets/product-zx9-speaker/desktop/image-product.jpg",
+      "alt": "The ZX9 speaker is black with a slightly textured finish. The top woofer has a white ring around the outside. There is a Stein Music logo on the front, below the woofer. The base of the speaker slants inwards slightly."
     },
     "category": "speakers",
     "categoryImage": {
       "mobile": "/assets/product-zx9-speaker/mobile/image-category-page-preview.jpg",
       "tablet": "/assets/product-zx9-speaker/tablet/image-category-page-preview.jpg",
-      "desktop": "/assets/product-zx9-speaker/desktop/image-category-page-preview.jpg"
+      "desktop": "/assets/product-zx9-speaker/desktop/image-category-page-preview.jpg",
+      "alt": "The ZX9 speaker is black with a slightly textured finish. The top woofer has a white ring around the outside. There is a Stein Music logo on the front, below the woofer. The base of the speaker slants inwards slightly."
     },
     "isNew": true,
     "price": 4500,
@@ -482,17 +509,20 @@
       "first": {
         "mobile": "/assets/product-zx9-speaker/mobile/image-gallery-1.jpg",
         "tablet": "/assets/product-zx9-speaker/tablet/image-gallery-1.jpg",
-        "desktop": "/assets/product-zx9-speaker/desktop/image-gallery-1.jpg"
+        "desktop": "/assets/product-zx9-speaker/desktop/image-gallery-1.jpg",
+        "alt": "A detailed view of a ZX9 speaker's cone, showcasing the textured surface and the robust frame with visible screws, reflecting a design that merges form and function."
       },
       "second": {
         "mobile": "/assets/product-zx9-speaker/mobile/image-gallery-2.jpg",
         "tablet": "/assets/product-zx9-speaker/tablet/image-gallery-2.jpg",
-        "desktop": "/assets/product-zx9-speaker/desktop/image-gallery-2.jpg"
+        "desktop": "/assets/product-zx9-speaker/desktop/image-gallery-2.jpg",
+        "alt": "A stylish speaker in a cozy room, with a collection of vinyl records stored neatly next to it, complemented by a variety of potted plants on an adjacent shelf and a large floor plant."
       },
       "third": {
         "mobile": "/assets/product-zx9-speaker/mobile/image-gallery-3.jpg",
         "tablet": "/assets/product-zx9-speaker/tablet/image-gallery-3.jpg",
-        "desktop": "/assets/product-zx9-speaker/desktop/image-gallery-3.jpg"
+        "desktop": "/assets/product-zx9-speaker/desktop/image-gallery-3.jpg",
+        "alt": "Two sleek black speakers with a white tweeter and dark woofer, placed side by side on a reflective surface."
       }
     },
     "others": [

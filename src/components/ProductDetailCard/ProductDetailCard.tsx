@@ -22,6 +22,7 @@ type ProductDetailCardProps = {
     mobile: string;
     tablet: string;
     desktop: string;
+    alt: string;
   };
   isNew: boolean;
 };
@@ -93,7 +94,13 @@ function ProductDetailCard({
       <picture className={`image-wrapper box overflow-hidden background-grey`}>
         <Source src={image.mobile} media={QUERIES.phoneAndSmaller} />
         <Source src={image.tablet} media={QUERIES.tabletAndSmaller} />
-        <Image src={image.desktop} alt="" width={540} height={560} priority />
+        <Image
+          src={image.desktop}
+          alt={image.alt}
+          width={540}
+          height={560}
+          priority
+        />
       </picture>
     </article>
   );

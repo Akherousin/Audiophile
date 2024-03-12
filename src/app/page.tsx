@@ -37,7 +37,11 @@ export default function Home() {
             <picture className={`${styles['hero-image']} | image-wrapper`}>
               <Source src={heroImgMobile} media={QUERIES.phoneAndSmaller} />
               <Source src={heroImgTablet} media={QUERIES.tabletAndSmaller} />
-              <Image src={heroImg} alt="" priority />
+              <Image
+                src={heroImg}
+                alt="A pair of over-ear headphones in black. The headphones have a sleek, modern design with round ear cups and a padded headband. "
+                priority
+              />
             </picture>
             <div className={styles['hero-info']}>
               <p className="overline opaque">New product</p>
@@ -77,7 +81,11 @@ export default function Home() {
                 src={speakerZX9ImgTablet}
                 media={QUERIES.tabletAndSmaller}
               />
-              <Image src={speakerZX9Img} alt="" />
+              <Image
+                src={speakerZX9Img}
+                alt="The ZX9 speaker is black with a slightly textured finish. The top woofer has a white ring around the outside. There is a Stein Music logo on the front, below the woofer.
+                The base of the speaker slants inwards slightly."
+              />
             </picture>
 
             <div className={styles['product1-info']}>
@@ -115,7 +123,11 @@ export default function Home() {
                 src={speakerZX7ImgTablet}
                 media={QUERIES.tabletAndSmaller}
               />
-              <Image src={speakerZX7Img} alt="" />
+              <Image
+                src={speakerZX7Img}
+                alt="
+                A black ZX7 speaker sitting on a wooden table. The speaker is a rectangular prism with a black, fabric grille on the front. It has a small, silver logo on the bottom right corner of the front grille."
+              />
             </picture>
 
             <div>
@@ -142,7 +154,10 @@ export default function Home() {
                 src={earphonesYX1ImgTablet}
                 media={QUERIES.tabletAndSmaller}
               />
-              <Image src={earphonesYX1Img} alt="" />
+              <Image
+                src={earphonesYX1Img}
+                alt="A pair of wireless earbuds in a charging case. The earbuds are black and have a glossy finish. They appear to have a touch sensor on the outside. The charging case is also black and has a rounded rectangular shape. There is a small LED light on the front of the case, which may indicate the charging status of the earbuds."
+              />
             </picture>
             <div className={`${styles['product3-info']} | box`}>
               <h2 className="h4">YX1 EARPHONES</h2>

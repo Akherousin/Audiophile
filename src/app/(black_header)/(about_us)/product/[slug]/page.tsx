@@ -83,7 +83,12 @@ export default async function ProductPage({
         <picture className="image-wrapper box overflow-hidden">
           <Source src={gallery.first.mobile} media={QUERIES.phoneAndSmaller} />
           <Source src={gallery.first.tablet} media={QUERIES.tabletAndSmaller} />
-          <Image alt="" src={gallery.first.desktop} width={445} height={280} />
+          <Image
+            alt={gallery.first.alt}
+            src={gallery.first.desktop}
+            width={445}
+            height={280}
+          />
         </picture>
         <picture className="image-wrapper box overflow-hidden">
           <Source src={gallery.second.mobile} media={QUERIES.phoneAndSmaller} />
@@ -91,12 +96,22 @@ export default async function ProductPage({
             src={gallery.second.tablet}
             media={QUERIES.tabletAndSmaller}
           />
-          <Image alt="" src={gallery.second.desktop} width={445} height={280} />
+          <Image
+            alt={gallery.second.alt}
+            src={gallery.second.desktop}
+            width={445}
+            height={280}
+          />
         </picture>
         <picture className="image-wrapper box overflow-hidden">
           <Source src={gallery.third.mobile} media={QUERIES.phoneAndSmaller} />
           <Source src={gallery.third.tablet} media={QUERIES.tabletAndSmaller} />
-          <Image alt="" src={gallery.third.desktop} width={635} height={592} />
+          <Image
+            alt={gallery.third.alt}
+            src={gallery.third.desktop}
+            width={635}
+            height={592}
+          />
         </picture>
       </section>
 
