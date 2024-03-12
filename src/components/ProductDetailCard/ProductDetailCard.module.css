@@ -13,6 +13,7 @@
 
 .form {
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
   margin-block-start: 2.5625rem;
 }
@@ -48,9 +49,5 @@
 
   .price {
     margin-block-start: 1.5rem;
-  }
-
-  .form {
-    justify-content: center;
   }
 }
