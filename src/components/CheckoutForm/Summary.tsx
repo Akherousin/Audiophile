@@ -4,37 +4,14 @@ import styles from './Summary.module.css';
 import Image from 'next/image';
 import { formatPrice } from '@/helpers';
 import Button from '../Button';
-import SuccessSvg from './SuccessSvg';
-import { Suspense, useEffect, useRef } from 'react';
-import paths from '@/paths';
-import { useEscapeKey } from '@/hooks/use-escape-key.hook';
-import { useRouter } from 'next/navigation';
+import RedirectingDialog from './RedirectingDialog';
 
 type SummaryProps = {
   showDialog: boolean;
 };
 
 function Summary({ showDialog }: SummaryProps) {
-  const { cartItems, totalPrice, emptyCart } = useCart();
-  const firstItem = cartItems[0];
-  const dialogRef = useRef<HTMLDialogElement | null>(null);
-  const router = useRouter();
-
-  useEffect(() => {
-    if (showDialog) {
-      dialogRef.current?.showModal();
-    }
-  }, [showDialog]);
-
-  const handleClick = () => {
-    emptyCart();
-  };
-
-  useEscapeKey(dialogRef, (e) => {
-    e.preventDefault();
-    emptyCart();
-    router.replace(paths.home());
-  });
+  const { cartItems, totalPrice } = useCart();
 
   return (
     <>
@@ -87,64 +64,7 @@ function Summary({ showDialog }: SummaryProps) {
         </Button>
       </div>
 
-      {firstItem && (
-        <dialog
-          ref={dialogRef}
-          className={styles.dialog}
-          aria-labelledby="form-dialog-label"
-        >
-          <SuccessSvg />
-          <p className={`${styles.title} | h3`} id={'form-dialog-label'}>
-            Thank you for your order
-          </p>
-          <p className="opaque">
-            You will receive an email confirmation shortly.
-          </p>
-          <div className={`${styles['dialog-summary']} | box overflow-hidden`}>
-            <div className={styles.purchased}>
-              <div className={`${styles.item}`}>
-                <div
-                  className={`${styles.image} | image-wrapper box overflow-hidden`}
-                >
-                  <Image src={firstItem.image} alt="" width={64} height={64} />
-                </div>
-
-                <p className={styles.name}>{firstItem.name}</p>
-                <p className={`${styles.price} | opaque`}>
-                  {formatPrice(firstItem.price)}
-                </p>
-                <p className={`${styles.quantity} | opaque`}>
-                  <span className="visually-hidden">Quantity - </span>
-                  <span aria-hidden="true">x</span>
-                  {firstItem.quantity}
-                </p>
-              </div>
-
-              {cartItems.length > 1 && (
-                <p className={styles.others}>
-                  and {cartItems.length - 1} other item(s)
-                </p>
-              )}
-            </div>
-            <div className={styles.total}>
-              <p className={`${styles.term} | opaque`}>Grand Total</p>
-              <p className={styles['bill-price']}>
-                {' '}
-                {formatPrice(totalPrice + 50)}
-              </p>
-            </div>
-          </div>
-
-          <Button
-            as="link"
-            variant="colored"
-            href={paths.home()}
-            onClick={handleClick}
-          >
-            Back to Home
-          </Button>
-        </dialog>
-      )}
+      {cartItems.length > 0 && <RedirectingDialog isDialogShown={showDialog} />}
     </>
   );
 }

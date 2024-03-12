@@ -1,0 +1,35 @@
+.item {
+  display: grid;
+  column-gap: 1rem;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas:
+    'image name quantity'
+    'image price _';
+}
+
+.image {
+  grid-area: image;
+  block-size: 3.125rem;
+  inline-size: 3.125rem;
+}
+
+.name,
+.quantity {
+  align-self: end;
+}
+
+.name {
+  grid-area: name;
+  font-weight: var(--font-weight-bold);
+  line-height: 1.5625rem;
+}
+
+.price {
+  grid-area: price;
+  align-self: start;
+}
+
+.quantity {
+  grid-area: quantity;
+  justify-self: end;
+}
