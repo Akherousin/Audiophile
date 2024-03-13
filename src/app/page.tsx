@@ -31,7 +31,7 @@ export default function Home() {
   return (
     <>
       <Header variant="dark" />
-      <main className={styles.main}>
+      <main className={styles.main} id="main" tabIndex={-1}>
         <header className={styles.hero}>
           <div className="wrapper overflow-hidden">
             <picture className={`${styles['hero-image']} | image-wrapper`}>

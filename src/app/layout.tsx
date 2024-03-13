@@ -5,6 +5,9 @@ import './globals.css';
 import CartProvider from '@/context/CartProvider';
 import ToastProvider from '@/context/ToastProvider';
 import ToastShelf from '@/components/ToastShelf';
+import FocusOnHeading from '@/components/FocusOnHeading';
+import Button from '@/components/Button';
+import Link from 'next/link';
 
 const manrope = Manrope({ subsets: ['latin'] });
 
@@ -21,6 +24,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={manrope.className}>
+        <a href="#main" id="skip-link">
+          Skip to Main Content
+        </a>
+        <FocusOnHeading />
         <ToastProvider>
           <CartProvider>{children}</CartProvider>
           <ToastShelf />

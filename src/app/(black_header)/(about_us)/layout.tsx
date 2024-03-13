@@ -9,7 +9,7 @@ export default function AboutUsLayout({
 }>) {
   return (
     <>
-      <main>
+      <main id="main">
         {children}
         <section className={`${styles.links} | wrapper`}>
           <Links />

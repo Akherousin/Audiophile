@@ -19,6 +19,7 @@ type HeaderProps = {
 function Header({ variant }: HeaderProps) {
   const [isOpen, setIsOpen] = useState(false);
   const navRef = useRef<HTMLDivElement | null>(null);
+
   useOnClickOutside(navRef, () => setIsOpen(false));
   useMakeInert(isOpen);
 

@@ -220,6 +220,45 @@ body {
   box-shadow: 0 0 0 0.25rem white;
 }
 
+[tabindex='-1'] {
+  outline: none;
+  box-shadow: none;
+}
+
+#skip-link {
+  position: fixed;
+  margin-inline: auto;
+  inline-size: fit-content;
+  top: -30em;
+  left: 0;
+  right: 0;
+  z-index: 2;
+
+  padding: 14px;
+  min-inline-size: 10rem;
+  text-align: center;
+  font-size: var(--font-size-subtitle);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.125rem;
+  letter-spacing: 0.08em;
+  transition: all var(--out-animation);
+  border: 1px solid;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-white);
+}
+
+#skip-link:focus-visible {
+  /* bring the link back "down" into view */
+  top: 10px;
+
+  /* ensure it is positioned on top of everything else when it is shown */
+  z-index: 1600;
+}
+
 /* Utilities */
 
 .visually-hidden:not(:focus):not(:active) {

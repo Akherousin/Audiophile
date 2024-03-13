@@ -8,7 +8,7 @@ export default function CheckoutPage() {
       <div className={`${styles.back} | wrapper`}>
         <GoBackLink />
       </div>
-      <main className={`${styles.main} | wrapper`}>
+      <main className={`${styles.main} | wrapper`} id="main">
         <CheckoutForm />
       </main>
     </div>

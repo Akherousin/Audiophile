@@ -9,7 +9,7 @@ export type ButtonProps = {
   | ({
       as?: 'button';
     } & React.ButtonHTMLAttributes<HTMLButtonElement>)
-  | ({ as: 'link' } & LinkProps)
+  | ({ as: 'link' } & LinkProps & React.AnchorHTMLAttributes<HTMLAnchorElement>)
 );
 
 function Button({

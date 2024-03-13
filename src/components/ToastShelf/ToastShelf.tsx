@@ -14,7 +14,7 @@ function ToastShelf() {
   return (
     <ol
       role="status"
-      aria-live="assertive"
+      aria-live="polite"
       aria-label="Notification"
       className={styles.toasts}
     >
