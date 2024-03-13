@@ -2,13 +2,10 @@
   background-color: var(--color-black);
 }
 
-.hero > div {
-  border-block-start: 1px solid hsla(0, 0%, 100%, 0.2);
-  padding-block: 98px 97px;
-}
-
 .hero h1 {
+  padding-block: 98px 97px;
   color: var(--color-white);
+  border-block-start: 1px solid hsla(0, 0%, 100%, 0.2);
   text-align: center;
 }
 
@@ -22,19 +19,17 @@
 }
 
 @media screen and (max-width: 48rem) {
-  .hero > div {
+  .hero h1 {
     padding-block: 105px 97px;
   }
 }
 
 @media screen and (max-width: 34.375rem) {
-  .hero > div {
-    padding-block: 32px;
-  }
-
   .hero h1 {
+    padding-block: 32px;
     font-size: 1.75rem;
     line-height: 2.375rem;
+    border: none;
   }
 
   .products {
