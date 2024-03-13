@@ -9,6 +9,7 @@ import QuantityInput from '@/components/QuantityInput';
 import { useRef } from 'react';
 import { useCart } from '@/context/CartProvider';
 import ConfirmationDialog from '../ConfirmationDialog/ConfirmationDialog';
+import { useToasts } from '@/context/ToastProvider';
 
 type CartItemProps = {
   id: number;
@@ -21,6 +22,7 @@ type CartItemProps = {
 function CartItem({ id, image, name, price, quantity }: CartItemProps) {
   const { incrementItemQuantity, decrementItemQuantity, deleteCartItem } =
     useCart();
+  const { createToast } = useToasts();
 
   const dialogRef = useRef<HTMLDialogElement | null>(null);
 
@@ -49,7 +51,10 @@ function CartItem({ id, image, name, price, quantity }: CartItemProps) {
 
       <ConfirmationDialog
         id={`dialog-label-${id}`}
-        onConfirm={() => deleteCartItem(id)}
+        onConfirm={() => {
+          deleteCartItem(id);
+          createToast(`Removed item from the cart`);
+        }}
         dialogRef={dialogRef}
       >
         <p className="h6" id={`dialog-label-${id}`}>

@@ -1,0 +1,58 @@
+.toasts {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 16px;
+  list-style-type: none;
+  z-index: 10;
+
+  animation: shelf 800ms cubic-bezier(0, 0.46, 0, 1.04) both;
+  will-change: transform;
+}
+
+.toast {
+  --shadow-color: 250deg 35% 11%;
+
+  position: relative;
+
+  background-color: var(--color-white);
+  box-shadow: 0px 0.3px 0.6px hsl(var(--shadow-color) / 0.2),
+    0px 0.7px 1.4px -1.1px hsl(var(--shadow-color) / 0.19),
+    0px 1.5px 3.7px -2.1px hsl(var(--shadow-color) / 0.18),
+    0.1px 4px 9.2px -3.2px hsl(var(--shadow-color) / 0.17),
+    0.2px 6px 15px -2.3px hsl(var(--shadow-color) / 0.16);
+
+  gap: 1rem;
+  padding: 1rem;
+
+  max-inline-size: 100%;
+  inline-size: 21.875rem;
+}
+
+.toast::before {
+  content: '';
+  block-size: 4px;
+  inline-size: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  background-color: var(--color-accent);
+  animation: progress 1000ms linear both;
+  animation-delay: 800ms;
+}
+
+@keyframes shelf {
+  from {
+    transform: translateX(calc(100% + 64px));
+  }
+}
+
+@keyframes progress {
+  to {
+    inline-size: 0;
+  }
+}

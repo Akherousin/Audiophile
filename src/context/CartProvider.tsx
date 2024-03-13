@@ -1,13 +1,7 @@
 'use client';
 
 import { useLocalStorage } from '@/hooks/use-local-storage.hook';
-import {
-  type ReactNode,
-  createContext,
-  useContext,
-  useState,
-  useEffect,
-} from 'react';
+import { type ReactNode, createContext, useContext } from 'react';
 
 type CartItem = {
   id: number;
@@ -35,8 +29,7 @@ export function useCart() {
   return useContext(CartContext);
 }
 
-export function CartProvider({ children }: { children: ReactNode }) {
-  // const [cartItems, setCartItems] = useState<CartItem[]>([]);
+function CartProvider({ children }: { children: ReactNode }) {
   const [cartItems, setCartItems] = useLocalStorage<CartItem[]>('cart', []);
 
   const cartSize = cartItems.reduce(
@@ -109,3 +102,5 @@ export function CartProvider({ children }: { children: ReactNode }) {
     </CartContext.Provider>
   );
 }
+
+export default CartProvider;

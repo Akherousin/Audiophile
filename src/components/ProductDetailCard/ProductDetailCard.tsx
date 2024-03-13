@@ -11,6 +11,7 @@ import QuantityInput from '@/components/QuantityInput';
 import { formatPrice } from '@/helpers';
 import Source from '../Source';
 import { QUERIES } from '@/constants';
+import { useToasts } from '@/context/ToastProvider';
 
 type ProductDetailCardProps = {
   id: number;
@@ -38,6 +39,7 @@ function ProductDetailCard({
 }: ProductDetailCardProps) {
   const [quantity, setQuantity] = useState(1);
   const { addCartItem } = useCart();
+  const { createToast } = useToasts();
 
   const incrementQuantity = () => {
     setQuantity(quantity + 1);
@@ -57,6 +59,9 @@ function ProductDetailCard({
       name: shortName,
       image: image.mobile,
     });
+    createToast(
+      `Added ${quantity} ${quantity === 1 ? 'item' : 'items'} to the cart`
+    );
   };
 
   return (

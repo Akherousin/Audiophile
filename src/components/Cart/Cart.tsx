@@ -13,10 +13,12 @@ import ConfirmationDialog from '../ConfirmationDialog/ConfirmationDialog';
 import { useTrapFocus } from '@/hooks/use-trap-focus.hook';
 import { useEscapeKey } from '@/hooks/use-escape-key.hook';
 import { useOnClickOutside } from '@/hooks/use-on-click-outside.hook';
+import { useToasts } from '@/context/ToastProvider';
 
 function Cart() {
   const [isOpen, setIsOpen] = useState(false);
   const { cartItems, cartSize, totalPrice, emptyCart } = useCart();
+  const { createToast } = useToasts();
   const dialogRef = useRef<HTMLDialogElement | null>(null);
   const cartWrapperRef = useRef<HTMLDivElement | null>(null);
 
@@ -67,7 +69,10 @@ function Cart() {
         <ConfirmationDialog
           id="dialog-label-remove-all"
           dialogRef={dialogRef}
-          onConfirm={() => emptyCart()}
+          onConfirm={() => {
+            emptyCart();
+            createToast(`Removed all items from the cart`);
+          }}
         >
           <p className="h6" id={`dialog-label-remove-all`}>
             Remove all items from the cart

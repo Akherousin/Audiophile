@@ -79,6 +79,7 @@ function RedirectingDialog({ isDialogShown }: RedirectingDialogProps) {
 
           {cartItems.length > 1 && (
             <button
+              type="button"
               className={`${styles['show-other-button']} | click-target-helper`}
               onClick={() => setShowAllItems(!showAllItems)}
               aria-controls="purchased-items-list"
