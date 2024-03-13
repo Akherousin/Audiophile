@@ -9,7 +9,7 @@
   list-style-type: none;
   z-index: 10;
 
-  animation: shelf 800ms cubic-bezier(0, 0.46, 0, 1.04) both;
+  inline-size: min(21.875rem, 100%);
   will-change: transform;
 }
 
@@ -29,7 +29,7 @@
   padding: 1rem;
 
   max-inline-size: 100%;
-  inline-size: 21.875rem;
+  animation: toast 800ms cubic-bezier(0, 0.46, 0, 1.04) both;
 }
 
 .toast::before {
@@ -45,7 +45,7 @@
   animation-delay: 800ms;
 }
 
-@keyframes shelf {
+@keyframes toast {
   from {
     transform: translateX(calc(100% + 64px));
   }
