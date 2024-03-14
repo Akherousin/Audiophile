@@ -9,6 +9,20 @@ import paths from '@/paths';
 import Source from '@/components/Source';
 import { QUERIES } from '@/constants';
 
+export async function generateMetadata({
+  params,
+}: {
+  params: {
+    slug: string;
+  };
+}) {
+  const product = await fetchProductBySlug(params.slug);
+
+  return {
+    title: `${product?.name} - Audiophile`,
+  };
+}
+
 export default async function ProductPage({
   params,
 }: {

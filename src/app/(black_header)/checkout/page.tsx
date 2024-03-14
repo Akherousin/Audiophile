@@ -1,6 +1,11 @@
 import GoBackLink from '@/components/GoBackLink';
 import styles from './page.module.css';
 import CheckoutForm from '@/components/CheckoutForm';
+import { type Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Checkout - Audiophile',
+};
 
 export default function CheckoutPage() {
   return (

@@ -5,6 +5,21 @@ import ProductCard from '@/components/ProductCard';
 import { type Category } from '@/types';
 import { fetchProductsByCategory } from '@/db/queries';
 
+export async function generateMetadata({
+  params,
+}: {
+  params: {
+    category: Category;
+  };
+}) {
+  const capitalizedCategory =
+    params.category[0].toUpperCase() + params.category.slice(1);
+
+  return {
+    title: `${capitalizedCategory} - Audiophile`,
+  };
+}
+
 export default async function CategoryPage({
   params,
 }: {

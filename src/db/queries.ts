@@ -1,6 +1,7 @@
 import { promises as fs } from 'fs';
 import { type Product, type Category } from '@/types';
 import path from 'path';
+import { cache } from 'react';
 
 export const fetchAllProducts = async (): Promise<Product[]> => {
   const file = path.join(process.cwd() + '/src/db/', 'data.json');
@@ -29,12 +30,12 @@ export const fetchProductsByCategory = async (category: Category) => {
   return filteredProducts;
 };
 
-export const fetchProductBySlug = async (slug: string) => {
+export const fetchProductBySlug = cache(async (slug: string) => {
   const products = await fetchAllProducts();
   let product = products.find((product) => product.slug == slug) || null;
 
   return product;
-};
+});
 
 export const fetchProductById = async (id: number) => {
   const products = await fetchAllProducts();
