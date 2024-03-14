@@ -4,7 +4,6 @@ import styles from './ConfirmationDialog.module.css';
 import { type ReactNode, type MutableRefObject } from 'react';
 import Button from '@/components/Button';
 import { useEscapeKey } from '@/hooks/use-escape-key.hook';
-import { useOnClickOutside } from '@/hooks/use-on-click-outside.hook';
 
 type ConfirmationDialogProps = {
   id: number | string;

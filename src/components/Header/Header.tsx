@@ -11,6 +11,7 @@ import MenuSvg from './MenuSvg';
 import { useRef, useState } from 'react';
 import { useOnClickOutside } from '@/hooks/use-on-click-outside.hook';
 import { useMakeInert } from '@/hooks/use-make-inert.hook';
+import { AnimatePresence, motion } from 'framer-motion';
 
 type HeaderProps = {
   variant: 'dark' | 'black';
@@ -46,15 +47,47 @@ function Header({ variant }: HeaderProps) {
               {isOpen ? 'Close navigation' : 'Open navigation'}
             </span>
           </button>
-          <div
-            className={styles.dropdown}
-            id="mobile-navigation-dropdown"
-            hidden={!isOpen}
-          >
-            <div className="wrapper">
-              <Links />
-            </div>
-          </div>
+          <AnimatePresence>
+            {isOpen && (
+              <motion.div
+                className={`${styles.dropdown} | overflow-hidden`}
+                id="mobile-navigation-dropdown"
+                initial={{
+                  opacity: 0,
+                  height: 0,
+                }}
+                animate={{
+                  opacity: 1,
+                  height: 'auto',
+                  transition: {
+                    height: {
+                      delay: 0.1,
+                      type: 'spring',
+                      stiffness: 350,
+                      damping: 40,
+                      restDelta: 0.01,
+                    },
+                  },
+                }}
+                exit={{
+                  opacity: 0,
+                  height: 0,
+                  transition: {
+                    height: {
+                      type: 'spring',
+                      stiffness: 500,
+                      damping: 30,
+                      restDelta: 0.01,
+                    },
+                  },
+                }}
+              >
+                <div className="wrapper">
+                  <Links />
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </nav>
 
         <Logo />

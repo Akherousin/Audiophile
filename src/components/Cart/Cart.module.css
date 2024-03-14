@@ -40,7 +40,6 @@
 
 .dropdown {
   --spacing: 2rem;
-
   position: absolute;
   z-index: 2;
   top: calc(100% + var(--padding-block) + var(--spacing));
@@ -48,9 +47,12 @@
 
   min-inline-size: min(calc(100% - 48px), 23.5625rem);
 
-  padding: 31px 31px 32px 33px;
   background-color: var(--color-white);
   box-shadow: 0rem calc(150vmax - var(--spacing)) 0 150vmax hsl(0, 0%, 0%, 0.4);
+}
+
+.dropdown > div {
+  padding: 31px 31px 32px 33px;
 }
 
 .dropdown header {
@@ -100,9 +102,13 @@
 }
 
 @media screen and (max-width: 34.375rem) {
-  /* .dropdown {
-    right: 0;
-    left: 0;
+  .dropdown > div {
+    padding: 24px;
+  }
+
+  .dropdown {
+    right: var(--padding-inline);
+    left: var(--padding-inline);
     margin-inline: auto;
-  } */
+  }
 }

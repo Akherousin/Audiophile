@@ -1,5 +1,6 @@
 import { type HTMLInputAutoCompleteAttribute } from 'react';
 import styles from './Input.module.css';
+import { AnimatePresence, motion } from 'framer-motion';
 
 type VariantInputProps =
   | {
@@ -81,7 +82,35 @@ function Input({
           aria-live="assertive"
           className={`${styles.error} | small-text`}
         >
-          {errors && errors[0]}
+          <AnimatePresence>
+            {errors && errors.length > 0 && (
+              <motion.span
+                initial={{
+                  y: '100%',
+                  opacity: 0,
+                }}
+                animate={{
+                  y: 0,
+                  opacity: 1,
+                }}
+                exit={{
+                  y: '100%',
+                  opacity: 0,
+                }}
+                transition={{
+                  type: 'spring',
+                  stiffness: 500,
+                  damping: 30,
+                  restDelta: 0.01,
+                }}
+                style={{
+                  display: 'block',
+                }}
+              >
+                {errors[0]}
+              </motion.span>
+            )}
+          </AnimatePresence>
         </p>
       </div>
     );
@@ -95,7 +124,18 @@ function Input({
           data-checked={checked}
         >
           <span className={styles.checkmark}>
-            {checked && <span className={styles.circle} />}
+            {checked && (
+              <motion.span
+                className={styles.circle}
+                layoutId="radio-circle"
+                transition={{
+                  type: 'spring',
+                  stiffness: 300,
+                  damping: 20,
+                  restDelta: 0.01,
+                }}
+              />
+            )}
           </span>
           <input
             id={id}
@@ -112,5 +152,7 @@ function Input({
       </div>
     );
 }
+
+const SPRING = {};
 
 export default Input;

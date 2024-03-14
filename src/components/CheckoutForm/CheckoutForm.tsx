@@ -432,6 +432,7 @@ function CheckoutForm() {
               describedby="cash-method-description"
             />
           </fieldset>
+
           {state['payment-method'].value === 'e-money' && (
             <div className={styles.grid}>
               <Input

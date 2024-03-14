@@ -27,6 +27,7 @@
   font-size: 0.875rem;
   font-weight: var(--font-weight-bold);
   line-height: 1.1875rem;
+  transition: border-color var(--out-animation);
 }
 
 .input:focus-visible {
@@ -50,10 +51,12 @@
   gap: 1rem;
   font-weight: var(--font-weight-bold);
   position: relative;
+  transition: border-color var(--out-animation);
 }
 
 .radio:hover {
   border-color: var(--color-accent);
+  transition: border-color var(--enter-animation);
 }
 
 .radio[data-checked='true'] {

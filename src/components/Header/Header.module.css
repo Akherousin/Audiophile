@@ -68,8 +68,12 @@
     left: 0;
     z-index: 2;
     border-radius: 0 0 var(--box-radius) var(--box-radius);
-    padding-block: 108px 67px;
+
     box-shadow: 0rem 300vmax 0 300vmax hsl(0, 0%, 0%, 0.4);
+  }
+
+  .dropdown > div {
+    padding-block: 108px 67px;
   }
 
   .button {

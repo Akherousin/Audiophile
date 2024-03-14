@@ -15,6 +15,8 @@ import { useEscapeKey } from '@/hooks/use-escape-key.hook';
 import { useOnClickOutside } from '@/hooks/use-on-click-outside.hook';
 import { useToasts } from '@/context/ToastProvider';
 
+import { motion, AnimatePresence } from 'framer-motion';
+
 function Cart() {
   const [isOpen, setIsOpen] = useState(false);
   const { cartItems, cartSize, totalPrice, emptyCart } = useCart();
@@ -51,61 +53,95 @@ function Cart() {
         )}
       </button>
 
-      <article
-        className={`${styles.dropdown} | box`}
-        hidden={!isOpen}
-        id="cart-dropdown"
-      >
-        <header className="flex-center">
-          <h2 className="h6">Cart ({cartSize})</h2>
-          <button
-            className={`${styles.remove} | click-target-helper`}
-            onClick={() => dialogRef.current?.showModal()}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.article
+            className={`${styles.dropdown} | box overflow-hidden`}
+            id="cart-dropdown"
+            initial={{
+              opacity: 0,
+              height: 0,
+            }}
+            animate={{
+              opacity: 1,
+              height: 'auto',
+              transition: {
+                height: {
+                  delay: 0.1,
+                  type: 'spring',
+                  stiffness: 350,
+                  damping: 40,
+                  restDelta: 0.01,
+                },
+              },
+            }}
+            exit={{
+              opacity: 0,
+              height: 0,
+              transition: {
+                height: {
+                  type: 'spring',
+                  stiffness: 500,
+                  damping: 30,
+                  restDelta: 0.01,
+                },
+              },
+            }}
           >
-            Remove all
-          </button>
-        </header>
+            <div>
+              <header className="flex-center">
+                <h2 className="h6">Cart ({cartSize})</h2>
+                <button
+                  className={`${styles.remove} | click-target-helper`}
+                  onClick={() => dialogRef.current?.showModal()}
+                >
+                  Remove all
+                </button>
+              </header>
 
-        <ConfirmationDialog
-          id="dialog-label-remove-all"
-          dialogRef={dialogRef}
-          onConfirm={() => {
-            emptyCart();
-            createToast(`Removed all items from the cart`);
-          }}
-        >
-          <p className="h6" id={`dialog-label-remove-all`}>
-            Remove all items from the cart
-          </p>
+              <ConfirmationDialog
+                id="dialog-label-remove-all"
+                dialogRef={dialogRef}
+                onConfirm={() => {
+                  emptyCart();
+                  createToast(`Removed all items from the cart`);
+                }}
+              >
+                <p className="h6" id={`dialog-label-remove-all`}>
+                  Remove all items from the cart
+                </p>
 
-          <p>Are you sure you want to remove all items from the cart?</p>
-        </ConfirmationDialog>
+                <p>Are you sure you want to remove all items from the cart?</p>
+              </ConfirmationDialog>
 
-        <ul className={styles.list}>
-          {cartItems.map((item) => (
-            <CartItem
-              key={item.id}
-              id={item.id}
-              name={item.name}
-              quantity={item.quantity}
-              image={item.image}
-              price={item.price}
-            />
-          ))}
-        </ul>
+              <ul className={styles.list}>
+                {cartItems.map((item) => (
+                  <CartItem
+                    key={item.id}
+                    id={item.id}
+                    name={item.name}
+                    quantity={item.quantity}
+                    image={item.image}
+                    price={item.price}
+                  />
+                ))}
+              </ul>
 
-        <p className={`${styles.total} | flex-center`}>
-          <span>Total</span> <span>{formatPrice(totalPrice)}</span>
-        </p>
-        <Button
-          as={'link'}
-          href={paths.showCheckoutPage()}
-          variant="colored"
-          onClick={() => closeCart()}
-        >
-          Checkout
-        </Button>
-      </article>
+              <p className={`${styles.total} | flex-center`}>
+                <span>Total</span> <span>{formatPrice(totalPrice)}</span>
+              </p>
+              <Button
+                as={'link'}
+                href={paths.showCheckoutPage()}
+                variant="colored"
+                onClick={() => closeCart()}
+              >
+                Checkout
+              </Button>
+            </div>
+          </motion.article>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
